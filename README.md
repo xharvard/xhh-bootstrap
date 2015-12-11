@@ -1,5 +1,5 @@
 # bootstrap_introduction
-bootstrap的入门<br>
+bootstrap入门<br>
 
 基于Bootstrap 3.3.5版本。<br>
 
