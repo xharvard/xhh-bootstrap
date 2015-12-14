@@ -1,0 +1,43 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+    margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+    width: auto;
+}
+
+.grid-col{
+    border:solid #8c8c8c 1px ;
+    font-size: 16pt;
+    margin-top:5px;
+}
+
+.grid-system-style{
+    background-color: #faebcc;
+}
+.text-style{
+    background-color: #9acfea;
+}
+
+.code-style{
+    background-color: #f0ad4e;
+}
+
+.table-style{
+
+}
+
+.form-style{
+
+}
