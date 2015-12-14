@@ -17,27 +17,33 @@ body {
     width: auto;
 }
 
-.grid-col{
-    border:solid #8c8c8c 1px ;
+.grid-col {
+    border: solid #8c8c8c 1px;
     font-size: 16pt;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
-.grid-system-style{
+.app-head {
+    color: #ff0000;
+}
+
+.grid-system-style {
     background-color: #faebcc;
 }
-.text-style{
+
+.text-style {
     background-color: #9acfea;
 }
 
-.code-style{
+.code-style {
     background-color: #f0ad4e;
 }
 
-.table-style{
+.table-style {
 
 }
 
-.form-style{
-
+.form-style {
+    background: #66afe9;
 }
+
