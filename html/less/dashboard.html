@@ -7,59 +7,434 @@
     <title>Less示例</title>
     <link href="../../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--  -->
+    <!-- 浏览器端使用方式 -->
     <link href="demo.less" rel="stylesheet/less">
     <script src="../../libs/less/less.min.js"></script>
 </head>
 <body role="document">
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Less 示例</h1>
-            <p>LESSCSS是一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS的赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。</p>
-            <p>LESSCSS可以在多种语言、环境中使用，包括浏览器端、桌面客户端、服务端。</p>
-            <p>LESSCSS的使用是很容易的，首先，使用你最常使用的代码编辑器，按LESSCSS的语法规则写好.less文件，接下来，使用编译工具它编译成.css，最后再引入页面即可。</p>
-            <p>LESSCSS也可以不经编译，直接在浏览器端使用。</p>
-        </div>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Less 示例</h1>
 
-        <div class="page-header">
-            <h1>2种引入方式</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <blockquote>
-                    <p>GUI编译工具</p>
-                </blockquote>
-                <p>koala(Win/Mac/Linux):国人开发的LESSCSS/SASS编译工具。<br />下载地址：http://koala-app.com/index-zh.html</p>
+        <p>LESSCSS是一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS的赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。</p>
 
-                <blockquote>
-                    <p>Node.js库</p>
-                </blockquote>
-                <P>安装less:<kbd>npm install -g less</kbd></P>
-                <P>使用lessc来编译.less文件:<kbd>lessc demo.less demo.css</kbd></P>
-            </div>
-            <div class="col-md-6">
-                <blockquote>
-                    <p>浏览器端使用</p>
-                </blockquote>
-                <ol>
-                    <li>
-                        下载LESSCSS的.js文件，例如less.min.js。
-                    </li>
-                    <li>
-                        在页面中引入.less文件
-                        <br/>
-                        <kbd>&lt;link rel="stylesheet/less" href="demo.less" /&gt;</kbd>
-                    </li>
-                    <li>
-                        引入第1步下载的.js文件
-                        <br/>
-                        <kbd>&lt;script src="less.min.js"&gt;&lt;/script&gt;</kbd>
-                    </li>
-                </ol>
+        <p>LESSCSS可以在多种语言、环境中使用，包括浏览器端、桌面客户端、服务端。</p>
 
-            </div>
-        </div>
+        <p>LESSCSS的使用是很容易的，首先，使用你最常使用的代码编辑器，按LESSCSS的语法规则写好.less文件，接下来，使用编译工具它编译成.css，最后再引入页面即可。</p>
 
+        <p>LESSCSS也可以不经编译，直接在浏览器端使用。</p>
     </div>
+
+    <div class="page-header">
+        <h1>2种引入方式</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote>
+                <p>GUI编译工具</p>
+            </blockquote>
+            <p>koala(Win/Mac/Linux):国人开发的LESSCSS/SASS编译工具。<br/>下载地址：http://koala-app.com/index-zh.html</p>
+
+            <blockquote>
+                <p>Node.js库</p>
+            </blockquote>
+            <P>安装less:<kbd>npm install -g less</kbd></P>
+
+            <P>使用lessc来编译.less文件:<kbd>lessc demo.less demo.css</kbd></P>
+        </div>
+        <div class="col-md-6">
+            <blockquote>
+                <p>浏览器端使用</p>
+            </blockquote>
+            <ol>
+                <li>
+                    下载LESSCSS的.js文件，例如less.min.js。
+                </li>
+                <li>
+                    在页面中引入.less文件
+                    <br/>
+                    <kbd>&lt;link rel="stylesheet/less" href="demo.less" /&gt;</kbd>
+                </li>
+                <li>
+                    引入第1步下载的.js文件
+                    <br/>
+                    <kbd>&lt;script src="less.min.js"&gt;&lt;/script&gt;</kbd>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>Less语法</h1>
+    </div>
+
+    <!--变量-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">变量</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+#header { color: @light-blue; }
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#header { color: #6c94be; }
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <p id="header">header样式</p>
+            <h2>h2样式</h2>
+        </div>
+    </div>
+    <!--变量-->
+
+    <!--混合-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">混合</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+.bordered {
+border-top: dotted 1px black;
+border-bottom: solid 2px black;
+}
+
+#menu a {
+color: #111111;
+.bordered;
+}
+
+.post a {
+color: red;
+.bordered;
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#menu a {
+color: #111111;
+border-top: dotted 1px black;
+border-bottom: solid 2px black;
+}
+.post a {
+color: red;
+border-top: dotted 1px black;
+border-bottom: solid 2px black;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div id="menu">
+                <a href="#">混合语法测试1</a>
+            </div>
+
+            <div class="post">
+                <a href="#">混合语法测试2</a>
+            </div>
+        </div>
+    </div>
+    <!--混合-->
+
+    <!--带参数混合-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">带参数混合</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+.border-radius (@radius) {
+border-radius: @radius;
+-moz-border-radius: @radius;
+-webkit-border-radius: @radius;
+}
+
+#content1{
+.border-radius(4px);
+}
+
+.content2{
+.border-radius(10px);
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#content1{
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+
+.content2{
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div id="content1" style="border: solid 1px red;">
+                content1
+            </div>
+            <br/>
+            <div class="content2" style="border: solid 1px red;">
+                content2
+            </div>
+        </div>
+    </div>
+    <!--带参数混合-->
+
+    <!--模式匹配和导引表达式-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">模式匹配</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+// 只接受dark做为首参
+.mixin(dark, @color){
+color: darken(@color, 10%);
+}
+
+// 只接受light
+.mixin(ligth, @color){
+color: lighten(@color, 10%);
+}
+
+// 接受任意值
+.mixin(@_, @color){
+display: block;
+}
+
+//现在运行如下代码：
+@switch:ligth;
+
+.mixin-test{
+.mixin(@switch, #888888);
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+.mixin-test{
+    color:#a2a2a2;
+    display: block;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <p class="mixin-test">匹配ligth</p>
+            <p class="mixin-test2">匹配dark</p>
+            <p class="mixin-test3">匹配任意值</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">导引表达式</p>
+            <p>导引中可用的全部比较运算有： > >= = =< <。此外，关键字true只表示布尔真值。
+                导引序列使用逗号‘,’—分割，当且仅当所有条件都符合时，才会被视为匹配成功。
+                最后，如果想基于值的类型进行匹配，我们就可以使用is*函式。</p>
+            <br/>
+            <p>常见的检测函式</p>
+            <ul>
+                <li>iscolor</li>
+                <li>isnumber</li>
+                <li>isstring</li>
+                <li>iskeyword</li>
+                <li>isurl</li>
+                <li>ispixel</li>
+                <li>ispercentage</li>
+                <li>isem</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+.mixin(@a) when (lightness(@a) >= 50%){
+background-color: black;
+}
+
+.mixin(@a) when (lightness(@a) < 50%){
+background-color: white;
+}
+
+.mixin(@a){
+color:@a;
+}
+
+.class1{
+.mixin(#dddddd);
+}
+
+.class2{
+.mixin(#555555);
+}
+
+//导引序列使用逗号‘,’分割，当且仅当所有条件都符合时，才会被视为匹配成功。
+//.mixin (@a) when (@a > 10), (@a < -10){...}
+
+//.mixin (@a, @b: 0) when (isnumber(@b)){...}
+
+//.mixin(@a, @b: black) when (iscolor(@b)){...}
+
+//在导引序列中可以使用and关键字实现与条件
+//.mixin(@a) when(isnumber(@a)) and (@a > 0){...}
+
+// 使用not关键字实现或条件
+//.mixin (@b) when not (@b > 0){...}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+.class1 {
+background-color: black;
+color: #dddddd;
+}
+.class2 {
+background-color: white;
+color: #555555;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div class="class1"> 大于50%</div>
+            <div class="class2"> 小于50%</div>
+        </div>
+    </div>
+    <!--模式匹配和导引表达式-->
+
+    <!--嵌套规则-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">嵌套规则</p>
+            <p>注意 & 符号的使用—如果你想写串联选择器，而不是写后代选择器，就可以用到&了. 这点对伪类尤其有用如 :hover 和 :focus.</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+#head{
+    color: black;
+
+    .navigation{
+        font-size:18pt;
+    }
+
+    .logo{
+        width:300px;
+        &:hover{
+        text-decoration: none;
+        }
+    }
+}
+</code></pre>
+            或者这样写:
+             <pre>
+<code>//LESS
+#head           { color: black;
+    .navigation { font-size: 18pt }
+    .logo       { width: 300px;
+        &:hover { text-decoration: none }
+    }
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#head { color: black; }
+#head .navigation {
+    font-size: 18pt;
+}
+#head .logo {
+    width: 300px;
+}
+#head .logo:hover {
+    text-decoration: none;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+
+        </div>
+    </div>
+    <!--嵌套规则-->
+
+    <!--运算-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">运算</p>
+            <p></p>任何数字、颜色或者变量都可以参与运算. </p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+@base: 5%;
+@filler: @base * 2;
+@width: 2px;
+
+#test-calc{
+    color: #888 / 4;
+    background-color: #9acfea;
+    height: 100% / 2 + @filler;
+    width:100px + 4;
+    border:(@width * 2) solid red;
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#test-calc{
+    color: #222;
+    background-color: #9acfea;
+    height: 60%;
+    width: 104px;
+    border: 4px solid red;
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div id="test-calc">
+                测试运算
+            </div>
+        </div>
+    </div>
+    <!--运算-->
+
+
+
+
+</div>
 </body>
 </html>

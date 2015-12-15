@@ -1,15 +1,181 @@
-//变量
-@color:#4D926F;
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
-#header{
+.app-head {
+  color: #ff0000;
+  font-size: 18pt;
+}
+
+//1,变量
+@color: #4D926E;
+
+#header {
   color: @color;;
 }
 
-h2{
-  color: @color;
+// 可以使用+/-运算
+h2 {
+  color: @color + #111;
 }
 
-body{
-  padding-top: 30px;
-  padding-bottom: 30px;
+//2,混合
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+#menu a {
+  color: #111111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}
+
+//3,带参数混合
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+#content1{
+  .border-radius(4px);
+}
+
+.content2{
+  .border-radius(10px);
+}
+
+//设置参数默认值
+.border-radius1(@radius:5px) {
+  -webkit-border-radius:@radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.default{
+  // 采用默认值5px
+  .border-radius1();
+}
+
+//@arguments变量
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;;
+  box-shadow: @arguments;
+}
+
+//调用
+#box{
+  .box-shadow(2px,5px);
+  //等同于
+  //-webkit-box-shadow: 2px 5px 1px #000;
+  //-moz-box-shadow: 2px 5px 1px #000;
+  //box-shadow: 2px 5px 1px #000;
+}
+
+//4,模式匹配和导引表达式
+// 4.1 模式匹配
+// 只接受dark做为首参
+.mixin(dark, @color){
+  color: darken(@color, 10%);
+}
+
+// 只接受light
+.mixin(ligth, @color){
+  color: lighten(@color, 10%);
+}
+
+// 接受任意值
+.mixin(@_, @color){
+  display: block;
+}
+
+//现在运行如下代码：
+@switch:ligth;
+.mixin-test{
+  .mixin(@switch, #888888);
+}
+
+@switch2:dark;
+.mixin-test2{
+  .mixin(@switch2, #888888);
+}
+
+@switch3:anyvalue;
+.mixin-test3{
+  .mixin(@switch3, #888888);
+}
+
+//4.2 引导
+.mixin(@a) when (lightness(@a) >= 50%){
+  background-color: black;
+}
+
+.mixin(@a) when (lightness(@a) < 50%){
+  background-color: white;
+}
+
+.mixin(@a){
+  color:@a;
+}
+
+.class1{
+  .mixin(#dddddd);
+}
+
+.class2{
+  .mixin(#555555);
+}
+
+//导引序列使用逗号‘,’分割，当且仅当所有条件都符合时，才会被视为匹配成功。
+.mixin (@a) when (@a > 10), (@a < -10) {
+}
+
+.mixin (@a, @b: 0) when (isnumber(@b)) {
+}
+
+.mixin (@a, @b: black) when (iscolor(@b)) {
+}
+
+//在导引序列中可以使用and关键字实现与条件
+.mixin (@a) when (isnumber(@a)) and (@a > 0) {
+}
+
+// 使用not关键字实现或条件
+.mixin (@b) when not (@b > 0) {
+}
+
+// 5,嵌套规则
+#head{
+  color: black;
+
+  .navigation{
+    font-size:18pt;
+  }
+
+  .logo{
+    width:300px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+// 6,运算
+@base: 5%;
+@filler: @base * 2;
+@width: 2px;
+
+#test-calc{
+  color: #888 / 4;
+  background-color: #9acfea;
+  height: 100% / 2 + @filler;
+  width:100px + 4;
+  border:(@width * 2) solid red;
 }
