@@ -392,7 +392,7 @@ color: #555555;
     <div class="row">
         <div class="col-md-2">
             <p class="app-head">运算</p>
-            <p></p>任何数字、颜色或者变量都可以参与运算. </p>
+            <p>任何数字、颜色或者变量都可以参与运算. </p>
         </div>
         <div class="col-md-4">
             <pre>
@@ -432,8 +432,288 @@ color: #555555;
     </div>
     <!--运算-->
 
+    <!--Color 函数-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">Color 函数</p>
+            <p>LESS 提供了一系列的颜色运算函数. 颜色会先被转化成 HSL 色彩空间, 然后在通道级别操作 </p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+@baseColor: #f04615;
 
+.test-color-1{
+    // 比@baseColor亮10%
+    background-color: lighten(@baseColor, 10%);
+}
 
+.test-color-2{
+    // 比@baseColor暗10%
+    background-color: darken(@baseColor, 10%);
+}
+
+.test-color-3{
+    // 比@baseColor饱和度高10%
+    background-color: saturate(@baseColor, 10%);
+}
+
+.test-color-4{
+    // 比@baseColor饱和度低10%
+    background-color: desaturate(@baseColor, 10%);
+}
+
+.test-color-5{
+    // 比@baseColor透明度低10%
+    background-color: fadein(@baseColor, 10%);
+}
+
+.test-color-6{
+    // 比@baseColor透明度低10%
+    background-color: fadeout(@baseColor, 10%);
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+.test-color-1 {
+    background-color: #f36c45;
+}
+.test-color-2 {
+    background-color: #c5360d;
+}
+.test-color-3 {
+    background-color: #fc3f09;
+}
+.test-color-4 {
+    background-color: #e44d21;
+}
+.test-color-5 {
+    background-color: #f04615;
+}
+.test-color-6 {
+    background-color: rgba(240, 70, 21, 0.9);
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div class="test-color-1">lighten</div>
+            <div class="test-color-2">darken</div>
+            <div class="test-color-3">saturate</div>
+            <div class="test-color-4">desaturate</div>
+            <div class="test-color-5">fadein</div>
+            <div class="test-color-6">fadeout</div>
+            <div class="test-color-7">fade 50%</div>
+            <div class="test-color-8">spin higer</div>
+            <div class="test-color-9">spin lower</div>
+            <div class="test-color-10">mix</div>
+        </div>
+    </div>
+    <!--Color 函数-->
+
+    <!--Math 函数-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">Math 函数</p>
+            <p>LESS 提供了一系列的颜色运算函数. 颜色会先被转化成 HSL 色彩空间, 然后在通道级别操作 </p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+.test-math-1{
+    border:red solid round(1.67px);
+}
+
+.test-math-2{
+    border:red solid ceil(1.67px);
+}
+
+.test-math-3{
+    border:red solid floor(1.67px);
+}
+
+.test-math-4{
+    // 比@baseColor透明度低50%
+    background-color: fadein(@baseColor, percentage(0.5));
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+.test-math-1 {
+    border: red solid 2px;
+}
+.test-math-2 {
+    border: red solid 2px;
+}
+.test-math-3 {
+    border: red solid 1px;
+}
+.test-math-4 {
+    background-color: #f04615;
+}
+</code></pre>
+        </div>
+        <div class="col-md-2">
+            //示例
+            <div class="test-math-1">round</div><br/>
+            <div class="test-math-2">ceil</div><br/>
+            <div class="test-math-3">floor</div><br/>
+            <div class="test-math-4">percentage</div><br/>
+        </div>
+    </div>
+    <!--Math 函数-->
+
+    <!--命名空间-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">命名空间</p>
+            <p>为了更好组织CSS或者单纯是为了更好的封装，将一些变量或者混合模块打包起来。</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+#bundle {
+    .button () {
+        display: block;
+        border: 1px solid black;
+        background-color: grey;
+        &:hover { background-color: white }
+    }
+    .tab { display: block }
+    .citation { display: block }
+}
+
+// 在 #header a中像这样引入 .button:
+#test-bundle a{
+    color: orange;
+    #bundle > .button;
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+#test-bundle a {
+    color: orange;
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+}
+#test-bundle a:hover {
+    background-color: white;
+}
+</code></pre>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <!--命名空间-->
+
+    <!--Importing-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">Importing</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+//可以在main文件中通过下面的形势引入 .less 文件, .less 后缀可带可不带
+@import "lib.less";
+@import "lib";
+
+//想导入一个CSS文件而且不想LESS对它进行处理，只需要使用.css后缀就可以
+@import "lib.css";
+</code></pre>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <!--Importing-->
+
+    <!--字符串插值-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">字符串插值</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+//变量可以用类似ruby和php的方式嵌入到字符串中，像@{name}这样的结构
+@base-url: "http://assets.fnord.com";
+background-image: url("@{base-url}/images/bg.png");
+</code></pre>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <!--字符串插值-->
+
+    <!--避免编译-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">避免编译</p>
+            <p>有时候我们需要输出一些不正确的CSS语法或者使用一些 LESS不认识的专有语法.
+                要输出这样的值我们可以在字符串前加上一个 ~ </p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+.class {
+    filter: ~"ms:alwaysHasItsOwnSyntax.For.Stuff()";
+}
+</code></pre>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//CSS
+.class {
+    filter: ms:alwaysHasItsOwnSyntax.For.Stuff();
+}
+</code></pre>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <!--避免编译-->
+
+    <!--JavaScript 表达式-->
+    <div class="row">
+        <div class="col-md-2">
+            <p class="app-head">JavaScript 表达式</p>
+            <p>JavaScript 表达式也可以在.less 文件中使用. 可以通过反引号的方式使用</p>
+        </div>
+        <div class="col-md-4">
+            <pre>
+<code>//LESS
+@var: `"hello".toUpperCase() + '!'`;  //@var: "HELLO!";
+@str: "hello";
+//@var: ~`@{str}.toUpperCase() + '!'`;  //@var: "HELLO!";
+
+// 它也可以访问JavaScript环境:
+@height: `document.body.clientHeight`;
+@color: color(`window.colors.baseColor`);
+</code></pre>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <!--JavaScript 表达式-->
 
 </div>
 </body>

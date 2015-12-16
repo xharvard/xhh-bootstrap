@@ -84,3 +84,60 @@ h2 {
   width: 104px;
   border: 4px solid red;
 }
+.test-color-1 {
+  background-color: #f36c45;
+}
+.test-color-2 {
+  background-color: #c5360d;
+}
+.test-color-3 {
+  background-color: #fc3f09;
+}
+.test-color-4 {
+  background-color: #e44d21;
+}
+.test-color-5 {
+  background-color: #f04615;
+}
+.test-color-6 {
+  background-color: rgba(240, 70, 21, 0.9);
+}
+.test-color-7 {
+  background-color: rgba(240, 70, 21, 0.5);
+}
+.test-color-8 {
+  background-color: #f06b15;
+}
+.test-color-9 {
+  background-color: #f02215;
+}
+.test-color-10 {
+  background-color: #f04615;
+}
+.test-math-1 {
+  border: red solid 2px;
+}
+.test-math-2 {
+  border: red solid 2px;
+}
+.test-math-3 {
+  border: red solid 1px;
+}
+.test-math-4 {
+  background-color: #f04615;
+}
+#bundle .tab {
+  display: block;
+}
+#bundle .citation {
+  display: block;
+}
+#test-bundle a {
+  color: orange;
+  display: block;
+  border: 1px solid black;
+  background-color: grey;
+}
+#test-bundle a:hover {
+  background-color: white;
+}

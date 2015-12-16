@@ -179,3 +179,97 @@ h2 {
   width:100px + 4;
   border:(@width * 2) solid red;
 }
+
+// 7,Color 函数
+@baseColor: #f04615;
+
+.test-color-1{
+  // 比@baseColor亮10%
+  background-color: lighten(@baseColor, 10%);
+}
+
+.test-color-2{
+  // 比@baseColor暗10%
+  background-color: darken(@baseColor, 10%);
+}
+
+.test-color-3{
+  // 比@baseColor饱和度高10%
+  background-color: saturate(@baseColor, 10%);
+}
+
+.test-color-4{
+  // 比@baseColor饱和度低10%
+  background-color: desaturate(@baseColor, 10%);
+}
+
+.test-color-5{
+  // 比@baseColor透明度低10%
+  background-color: fadein(@baseColor, 10%);
+}
+
+.test-color-6{
+  // 比@baseColor透明度低10%
+  background-color: fadeout(@baseColor, 10%);
+}
+
+.test-color-7{
+  // @baseColor透明度50%
+  background-color: fade(@baseColor, 50%);
+}
+
+.test-color-8{
+  // 比@baseColor色度高10
+  background-color: spin(@baseColor, 10);
+}
+
+.test-color-9{
+  // 比@baseColor色度低10
+  background-color: spin(@baseColor, -10);
+}
+
+.test-color-10{
+  // 2个颜色混合
+  background-color: mix(@baseColor + #111111,@baseColor - #111111);
+}
+
+// 8,Math函数
+.test-math-1{
+  border:red solid round(1.67px);
+}
+
+.test-math-2{
+  border:red solid ceil(1.67px);
+}
+
+.test-math-3{
+  border:red solid floor(1.67px);
+}
+
+.test-math-4{
+  // 比@baseColor透明度低50%
+  background-color: fadein(@baseColor, percentage(0.5));
+}
+
+// 9,命名空间
+#bundle {
+  .button () {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover { background-color: white }
+  }
+  .tab { display: block }
+  .citation { display: block }
+}
+
+// 在 #header a 中像这样引入 .button:
+#test-bundle a {
+  color: orange;
+  #bundle > .button;
+}
+
+// 10,JavaScript 表达式
+@var: `"hello".toUpperCase() + '!'`;  //@var: "HELLO!";
+@str: "hello";
+//@var: ~`@{str}.toUpperCase() + '!'`;  //@var: "HELLO!";
