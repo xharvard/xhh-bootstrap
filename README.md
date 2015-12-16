@@ -8,9 +8,10 @@ Bootstrap入门<br>
 Node.js官方网站：https://nodejs.org<br>
 Less官方网站:http://lesscss.org/<br>
 
-参考资料: http://www.bootcss.com/<br>
-         http://www.1024i.com/demo/less/index.html<br>
-         http://nodejs.cn/<br>
+参考资料: <br>
+http://www.bootcss.com/<br>
+http://www.1024i.com/demo/less/index.html<br>
+http://nodejs.cn/<br>
          
 
 进度：<br>
