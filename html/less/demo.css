@@ -1,0 +1,86 @@
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.app-head {
+  color: #ff0000;
+  font-size: 18pt;
+}
+#header {
+  color: #4D926E;
+}
+h2 {
+  color: #5ea37f;
+}
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+#menu a {
+  color: #111111;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.post a {
+  color: red;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+#content1 {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.content2 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.default {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#box {
+  -webkit-box-shadow: 2px 5px 1px #000;
+  -moz-box-shadow: 2px 5px 1px #000;
+  box-shadow: 2px 5px 1px #000;
+}
+.mixin-test {
+  color: #a2a2a2;
+  display: block;
+}
+.mixin-test2 {
+  color: #6f6f6f;
+  display: block;
+}
+.mixin-test3 {
+  display: block;
+}
+.class1 {
+  background-color: black;
+  color: #dddddd;
+}
+.class2 {
+  background-color: white;
+  color: #555555;
+}
+#head {
+  color: black;
+}
+#head .navigation {
+  font-size: 18pt;
+}
+#head .logo {
+  width: 300px;
+}
+#head .logo:hover {
+  text-decoration: none;
+}
+#test-calc {
+  color: #222222;
+  background-color: #9acfea;
+  height: 60%;
+  width: 104px;
+  border: 4px solid red;
+}
