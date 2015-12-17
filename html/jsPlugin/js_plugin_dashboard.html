@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link href="../../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="js_plugin.css" rel="stylesheet">
     <title>模态框</title>
     <script src="../../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
     <script src="../../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 
     <script>
         $(function () {
-            // 1,静态实例 的js实现
+            // 1,静态实例的js实现
             $("#mymodal").modal("show");
 
-            // 5,基于按钮动态变化 的js实现
-            $("#bs-modal-dynamic").on("show.bs.modal",function(event){
+            // 5,基于按钮动态变化的js实现
+            $("#bs-modal-dynamic").on("show.bs.modal", function (event) {
                 var button = $(event.relatedTarget);        // Button that triggered the modal
                 var recipient = button.data("whatever");    // Extract info from data-* attributes
 
@@ -24,8 +25,8 @@
                 modal.find(".modal-body input").val(recipient);
             });
 
-
-
+            // 工具提示的js实现
+            $('[data-toggle="tooltip"]').tooltip();
 
         });
     </script>
@@ -194,7 +195,8 @@
     <!-- 4,使用栅格系统 -->
     <div class="container">
         <p>模态框里使用栅格系统</p>
-        <button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-grid">使用栅格系统</button>
+        <button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-grid">使用栅格系统
+        </button>
         <div class="modal" id="bs-modal-grid">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -275,12 +277,237 @@
     <!-- 模态框 -->
 
 
+    <!-- 下拉菜单 -->
+    <div class="page-header">
+        <h1>下拉菜单</h1>
+    </div>
 
+    <!-- 依赖dropdown.js插件 -->
+    <!-- 1,嵌入导航条 -->
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- 导航头 -->
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Brand</a>
+                </div>
 
+                <!-- 导航一览 -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <!-- data-toggle="dropdown"使下拉菜单可以触发 -->
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button">
+                                Dropdown
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <!-- data-toggle="dropdown"使下拉菜单可以触发 -->
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button">
+                                Dropdown
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- 下拉菜单 -->
 
+    <!-- 滚动监听 -->
+    <div class="page-header">
+        <h1>滚动监听</h1>
+    </div>
 
+    <!-- 依赖scrollspy.js插件 -->
+    <!-- 1,导航条实例 -->
+    <p>导航条实例</p>
 
+    <nav id="nav-example" class="navbar navbar-default">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Brand</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="#fat">@fat</a></li>
+            <li><a href="#mdo">@mdo</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown">
+                    Dropdown<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#one">one</a></li>
+                    <li><a href="#two">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#three">three</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 具体内容 -->
+    <div class="scrollspy-example" data-spy="scroll" data-target="#nav-example" data-offset="0">
+        <h4 id="fat">@fat</h4>
+
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui.
+            Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo
+            booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't
+            heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred
+            irony biodiesel keffiyeh artisan ullamco consequat.</p>
+        <h4 id="mdo">@mdo</h4>
+
+        <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat
+            mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck,
+            mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis
+            gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+        <h4 id="one">one</h4>
+
+        <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh
+            mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park
+            consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger
+            bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+        <h4 id="two">two</h4>
+
+        <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam.
+            Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers
+            irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art
+            party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi
+            sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud
+            mlkshk brooklyn nesciunt.</p>
+        <h4 id="three">three</h4>
+
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui.
+            Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo
+            booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't
+            heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred
+            irony biodiesel keffiyeh artisan ullamco consequat.</p>
+
+        <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda.
+            Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie
+            gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch
+            nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade
+            velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+        </p>
+    </div>
+    <!-- 滚动监听 -->
+
+    <!-- 标签页 -->
+    <div class="page-header">
+        <h1>标签页</h1>
+    </div>
+
+    <!-- 依赖tab.js插件 -->
+    <!-- 1,标签页实例 -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active" role="presentation">
+            <a href="#home" data-toggle="tab">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#profile" data-toggle="tab">profile</a>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                Setting<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#dropdown1" data-toggle="tab">setting-1</a></li>
+                <li><a href="#dropdown2" data-toggle="tab">setting-2</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active fade in" role="tabpanel" id="home">
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
+                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+                Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate
+                nisi qui.</p>
+        </div>
+        <div class="tab-pane fade" role="tabpanel" id="profile">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+                labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+                scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+        <div class="tab-pane fade" role="tabpanel" id="dropdown1">
+            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro
+                fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone
+                skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings
+                gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork
+                biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
+                craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+        </div>
+        <div class="tab-pane fade" role="tabpanel" id="dropdown2">
+            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master
+                cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party
+                locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they
+                sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats
+                keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+        </div>
+    </div>
+    <!-- 标签页 -->
+
+    <!-- 工具提示 -->
+    <div class="page-header">
+        <h1>工具提示</h1>
+    </div>
+
+    <!-- 依赖tooltip.js插件 -->
+    <!--出于性能考虑，必须自己初始化工具提示的js代码-->
+
+    <!-- 1,工具提示示例 -->
+    <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+        Tooltip on button left
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        Tooltip on button top
+    </button>
+    <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+        Tooltip on button right
+    </button>
+    <button class="btn btn-info " type="button" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+        Tooltip on button bottom
+    </button>
+    <!-- 工具提示 -->
+
+    <!-- 弹出框  -->
+    <div class="page-header">
+        <h1>弹出框 </h1>
+    </div>
+
+    <!-- 依赖popover.js插件 -->
+    <!--出于性能考虑，必须自己初始化弹出框的js代码-->
+
+    <!-- 1,弹出框实例 -->
+
+    <!-- 弹出框  -->
 
 </div>
 </body>
