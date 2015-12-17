@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <title>模态框</title>
+    <script src="../../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="../../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            // 1,静态实例 的js实现
+            $("#mymodal").modal("show");
+
+            // 5,基于按钮动态变化 的js实现
+            $("#bs-modal-dynamic").on("show.bs.modal",function(event){
+                var button = $(event.relatedTarget);        // Button that triggered the modal
+                var recipient = button.data("whatever");    // Extract info from data-* attributes
+
+                // Update the modal's content. We'll use jQuery here,
+                // but you could use a data binding library or other methods instead.
+                var modal = $(this);
+                js_plugin_dashboard.find(".modal-title").text("New message to " + recipient);
+                js_plugin_dashboard.find(".modal-body input").val(recipient);
+            });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!--全局说明-->
+    <div class="jumbotron">
+        <h1>JavaScript 插件</h1>
+
+        <p>jQuery 插件为 Bootstrap 的组件赋予了“生命”。可以简单地一次性引入所有插件，或者逐个引入到你的页面中。</p>
+    </div>
+    <!--全局说明-->
+
+
+    <!-- 模态框 -->
+    <div class="page-header">
+        <h1>模态框</h1>
+    </div>
+    <!-- 依赖modal.js插件 -->
+    <!-- 1,静态实例 -->
+    <!--
+        按照官方文档的代码，配置完以后无法弹出模态框，具体原因不详。
+        解决方法：在文档加载完后手动执行显示的代码。
+        $("#mymodal").modal("show");
+    -->
+    <div id="mymodal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" data-dismiss="modal">
+                    <button class="close" type="button" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>detail contents&hellip;</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" type="button">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog-->
+    </div><!-- /.modal -->
+
+    <!-- 2,动态实例 -->
+    <div class="container">
+        <p>点击下面的按钮即可通过 JavaScript 启动一个模态框。此模态框将从上到下、逐渐浮现到页面前。如果不需要动画，去掉.fade式样</p>
+
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#mymodal2">
+            Launch Modal
+        </button>
+
+        <div class="modal fade" id="mymodal2" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">动态modal</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>detail contents&hellip;</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <!-- 3,可选尺寸 -->
+    <div class="container">
+        <p>模态框提供了两个可选尺寸，通过为 .modal-dialog 增加一个样式调整类实现。</p>
+
+        <!-- Large modal -->
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target=".bs-modal-lg">
+            大模态框
+        </button>
+        <div class="modal fade bs-modal-lg" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">大模态框</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>detail contents&hellip;</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- nomal modal -->
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target=".bs-modal-nomal">
+            正常模态框
+        </button>
+        <div class="modal fade bs-modal-nomal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">正常模态框</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>detail contents&hellip;</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Small modal -->
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target=".bs-modal-sm">
+            小模态框
+        </button>
+        <div class="modal fade bs-modal-sm" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">小模态框</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>detail contents&hellip;</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <!-- 4,使用栅格系统 -->
+    <div class="container">
+        <p>模态框里使用栅格系统</p>
+        <button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-grid">使用栅格系统</button>
+        <div class="modal" id="bs-modal-grid">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">使用栅格系统</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4">栅格系统</div>
+                                <div class="col-md-4 col-md-offset-4">栅格系统</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-3">栅格系统</div>
+                                <div class="col-md-2 col-md-offset-4">栅格系统</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">栅格系统</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <!-- 5,基于按钮动态变化 -->
+    <div class="container">
+        <p>点击不同的按钮，显示不同的模态框内容</p>
+        <button class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-dynamic"
+                data-whatever="@modal">Open modal for @modal
+        </button>
+        <button class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-dynamic"
+                data-whatever="@jQuery">Open modal for @jQuery
+        </button>
+        <button class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#bs-modal-dynamic"
+                data-whatever="@bootstrap">Open modal for @bootstrap
+        </button>
+
+        <div class="modal fade" id="bs-modal-dynamic">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" data-dismiss="modal">
+                        <button class="close" type="button">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="modalTitle">New Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label" for="recipient">收件人:</label>
+                                <input class="form-control" type="text" id="recipient">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="message">消息:</label>
+                                <textarea class="form-control" rows="5" id="message"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 -->
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
