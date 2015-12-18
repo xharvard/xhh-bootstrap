@@ -28,6 +28,17 @@
             // 工具提示的js实现
             $('[data-toggle="tooltip"]').tooltip();
 
+            // 弹出框的js实现
+            $('[data-toggle="popover"]').popover();
+
+            // 按钮的click事件
+            $("#myButton").on("click", function () {
+                var $btn = $(this).button("loading");
+                // 业务处理
+                $(this).html($btn.data("loading-text"));
+alert(1);
+                $btn.button("reset");
+            });
         });
     </script>
 </head>
@@ -506,8 +517,80 @@
     <!--出于性能考虑，必须自己初始化弹出框的js代码-->
 
     <!-- 1,弹出框实例 -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="popover" title="Popover title"
+            data-content="Popover content">点我弹出/隐藏弹出框
+    </button>
 
+    <br/>
+    <br/>
+
+    <p>4个弹出方向</p>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left"
+            data-content="我在左侧">Popover on 左侧
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top"
+            data-content="我在上面">Popover on 上面
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right"
+            data-content="我在右侧">Popover on 右侧
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom"
+            data-content="我在下面">Popover on 下面
+    </button>
+
+    <br/>
+    <br/>
+
+    <p>点击并让弹出框消失</p>
+    <!--为了更好的跨浏览器和跨平台效果你必须使用<a>标签不能使用<button>标签并且还必须包含role="button"和tabindex属性。-->
+    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus"
+       title="Dismissible popover"
+       data-content="And here's some amazing content. It's very engaging. Right?">可消失的弹出框</a>
+
+    <button type="button" class="btn btn-success btn-lg" data-container="body" data-toggle="popover"
+            data-placement="right"
+            title="标题" data-content="点击我消失" data-trigger="focus">可消失的弹出框
+    </button>
     <!-- 弹出框  -->
+
+    <!-- 警告信息  -->
+    <div class="page-header">
+        <h1>警告信息 </h1>
+    </div>
+
+    <!-- 依赖alert.js插件 -->
+    <!-- 1,警告信息实例 -->
+    <div class="alert alert-warning alert-dismissable fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        <strong>警告！</strong>不要靠近。
+    </div>
+
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        <h4>出错啦</h4>
+        <p>请修改程序后再试一下！</p>
+        <button type="button" class="btn btn-info">返回</button>
+        <button type="button" class="btn btn-warning">再试一次</button>
+    </div>
+    <!-- 警告信息  -->
+
+    <!-- 按钮  -->
+    <div class="page-header">
+        <h1>按钮 </h1>
+    </div>
+
+    <!-- 依赖button.js插件 -->
+    <!-- 1,按钮实例 -->
+    <button type="button" class="btn btn-primary" id="myButton" autocomplete="off" data-loading-text="Loading...">
+        Loading state
+    </button>
+
+    <button type="button" class="btn btn-primary" data-toggle="button"  autocomplete="off">
+        Single toggle
+    </button>
+
+    <!-- 按钮  -->
+
 
 </div>
 </body>
