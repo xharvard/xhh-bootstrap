@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器和事件</title>
+
+    <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").text("被修改了");
+//                $("#pid").text("被修改了");
+//                $(".pclass").text("被修改了");
+            });
+
+            //onclick
+//            $("button").click(function(){
+//                $(this).hide();
+//            });
+
+            //onclick
+            $("button").dblclick(function(){
+                $(this).hide();
+            });
+
+            $("body").bind("click",bodyHandler);
+
+        });
+
+        function bodyHandler(event){
+            console.log(event);
+        }
+    </script>
+</head>
+<body>
+<p class="pclass">p1</p>
+
+<p id="pid">p2</p>
+
+<button>click me</button>
+
+<br>
+<br>
+<button>event test</button>
+
+<div style="width: 200px; height: 200px; background-color: #31b0d5">
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+    </ul>
+</div>
+
+</body>
+</html>

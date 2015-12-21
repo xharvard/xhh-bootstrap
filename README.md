@@ -7,6 +7,7 @@ Bootstrap入门<br>
 官方网站：http://getbootstrap.com <br>
 Node.js官方网站：https://nodejs.org<br>
 Less官方网站:http://lesscss.org/<br>
+jQuery官方网站:http://jquery.com/<br>
 
 参考资料: <br>
 Bootstrap中文网:http://www.bootcss.com/<br>
@@ -25,3 +26,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/18  加入JS插件之滚动监听，警告信息，工具提示。<br>
 2015/12/21  加入JS插件之按钮，Collapse，carousel，affix 。<br>
 2015/12/21  加入Bootstrap日期和时间选择器。<br>
+2015/12/21  加入jQuery(2.1.4)。<br>
