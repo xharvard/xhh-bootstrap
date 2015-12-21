@@ -9,9 +9,10 @@ Node.js官方网站：https://nodejs.org<br>
 Less官方网站:http://lesscss.org/<br>
 
 参考资料: <br>
-http://www.bootcss.com/<br>
-http://www.1024i.com/demo/less/index.html<br>
-http://nodejs.cn/<br>
+Bootstrap中文网:http://www.bootcss.com/<br>
+LESS教程:http://www.1024i.com/demo/less/index.html<br>
+Node.js中文网:http://nodejs.cn/<br>
+日期时间选择器:http://www.bootcss.com/p/bootstrap-datetimepicker/index.htm<br>
          
 
 进度：<br>
@@ -23,3 +24,4 @@ http://nodejs.cn/<br>
 2015/12/17  加入JS插件之滚动监听，标签页，工具提示。<br>
 2015/12/18  加入JS插件之滚动监听，警告信息，工具提示。<br>
 2015/12/21  加入JS插件之按钮，Collapse，carousel 。<br>
+2015/12/21  加入Bootstrap日期和时间选择器。<br>
