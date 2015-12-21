@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>日期时间选择器</title>
+    <link rel="stylesheet" href="../libs/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+    <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="../libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".form_datetime1").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        });
+
+    </script>
+
 </head>
-<body>
+<body style="padding-top: 20px;">
+<div class="container">
+    <fieldset>
+        <legend>日期时间选择器示例</legend>
+
+        <!-- Default input -->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Default input</label>
+
+            <div class="input-group col-md-4">
+                <input class="form_datetime1  form-control" type="text" size="16" value="" readonly>
+            </div>
+        </div>
+
+
+    </fieldset>
+</div>
 
 </body>
 </html>
