@@ -11,7 +11,43 @@
 
     <script>
         $(function () {
-            $(".form_datetime1").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+            $(".form_datetime1").datetimepicker({
+                format: 'yyyy-mm-dd hh:ii',
+                autoclose: 1,
+                showMeridian: 1
+            });
+
+            $(".form_datetime2").datetimepicker({
+                format: 'yyyy-mm-dd hh:ii',
+                todayBtn: 1,
+                autoclose: 1,
+                forceParse: 0
+            });
+
+            $(".form_datetime3").datetimepicker({
+                format: 'yyyy-mm-dd hh:ii',
+                todayBtn: 1,
+                autoclose: 1,
+                pickerPosition: "bottom-left"
+            });
+
+            $(".form_datetime4").datetimepicker({
+                format: 'yyyy-mm-dd hh:ii',
+                todayBtn: 1,
+                autoclose: 1,
+                pickerPosition: "bottom-right",
+                startDate: "2015-11-14 10:00",
+                minuteStep: 10,
+                todayHighlight: true
+            });
+
+            $(".form_datetime5").datetimepicker({
+                format: 'dd MM yyyy - hh:ii',
+                todayBtn: 1,
+                autoclose: 1,
+                startView: 3,
+                linkField: mirrorField
+            });
         });
 
     </script>
@@ -31,9 +67,54 @@
             </div>
         </div>
 
+        <!-- Default component -->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Default component</label>
+
+            <div class="input-group date form_datetime2 col-md-4">
+                <input class="form-control" type="text" size="16" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+        </div>
+
+        <!-- 定位 -->
+        <div class="form-group">
+            <label class="col-md-2 control-label">定位</label>
+
+            <div class="input-group date form_datetime3 col-md-4">
+                <input class="form-control" type="text" size="16" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+        </div>
+
+        <!-- Advanced -->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Advanced</label>
+
+            <div class="input-group date form_datetime4 col-md-4">
+                <input class="form-control" type="text" size="16" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+        </div>
+
+        <!-- Mirror field -->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mirror field</label>
+
+            <div class="input-group date form_datetime5 col-md-4">
+                <input class="form-control" type="text" size="16" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+
+        </div>
+        <input type="text" class="form-control" id="mirrorField" value="" readonly>
+
 
     </fieldset>
 </div>
+
 
 </body>
 </html>
