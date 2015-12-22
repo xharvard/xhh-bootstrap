@@ -26,4 +26,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/18  加入JS插件之滚动监听，警告信息，工具提示。<br>
 2015/12/21  加入JS插件之按钮，Collapse，carousel，affix 。<br>
 2015/12/21  加入Bootstrap日期和时间选择器。<br>
-2015/12/21  加入jQuery(2.1.4)。<br>
+2015/12/22  加入jQuery之属性选择器。<br>
