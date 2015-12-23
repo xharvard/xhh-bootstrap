@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+
+    <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/selector.css" rel="stylesheet">
+
+    <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/selector.js"></script>
+</head>
+<body>
+
+<!-- 选择器 -->
+<div class="container">
+    <div class="page-header">
+        <h1>选择器之 属性选择器</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute|='value']" )</h4>
+
+            <p>描述: 选择指定属性值等于给定字符串或以该字符串为前缀（该字符串后跟一个连字符“-” ）的元素。</p>
+            <kbd>$('a[hreflang|="en"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <a href="#" hreflang="en">Some text</a>
+            <a href="#" hreflang="en-Uk">Some other text</a>
+            <a href="#" hreflang="english">will not be outlined</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute*='value']" )</h4>
+
+            <p>描述: 选择指定属性具有包含一个给定的子字符串的元素。（选择给定的属性是以包含某些值的元素）</p>
+            <kbd>$('input[name*="man"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <input name="man-news"/>
+            <input name="milkman"/>
+            <input name="letterman2"/>
+            <input name="newmilk"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute~='value']" )</h4>
+
+            <p>描述: 选择指定属性用空格分隔的值中包含一个给定值的元素。</p>
+            <kbd>$('input[name~="womn"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <input name="womn-news"/>
+            <input name="milk womn"/>
+            <input name="letterwomn2"/>
+            <input name="newmilk"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute$='value']" )</h4>
+
+            <p>描述: 选择指定属性是以给定值结尾的元素。这个比较是区分大小写的。</p>
+            <kbd>$('input[name$="letter"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <input name="newsletter"/>
+            <input name="letternew"/>
+            <input name="jobLetter"/>
+            <input name="jobletter"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute='value']" )</h4>
+
+            <p>描述: 选择指定属性是给定值的元素。</p>
+            <kbd>$('input[value="Hot Fuzz"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <div>
+                <label>
+                    <input type="radio" name="radio1" value="Hot Fuzz"/>
+                    <span>name?</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="radio1" value="Cold Fusion"/>
+                    <span>value?</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="radio1" value="Evil Plans"/>
+                    <span>value?</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute!='value']" )</h4>
+
+            <p>描述: 选择不存在指定属性，或者指定的属性值不等于给定值的元素。</p>
+            <kbd>$('input[name!="newsletter"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <div id="noteqId">
+                <label>
+                    <input type="radio" name="newsletter" value="Hot Fuzz"/>
+                    <span>name is newsletter</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" value="Cold Fusion"/>
+                    <span>no name</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="accept" value="Evil Plans"/>
+                    <span>name is accept</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute^='value']" )</h4>
+
+            <p>描述: 选择指定属性是以给定字符串开始的元素</p>
+            <kbd>$('input[name^="news"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <input name="test123"/>
+            <input name="Test123"/>
+            <input name="test-abc"/>
+            <input name="test abc"/>
+            <input name="tes123"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attribute]" )</h4>
+
+            <p>描述: 选择所有具有指定属性的元素，该属性可以是任何值。</p>
+            <kbd>$('div[id]')</kbd>
+        </div>
+        <div class="col-md-8" id="divId">
+            <div>[click me]no id</div>
+            <div id="hey">[click me]with id</div>
+            <div id="there">[click me]has an id</div>
+            <div>[click me]nope</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "[attributeFilter1][attributeFilter2][attributeFilterN]" )</h4>
+
+            <p>描述: 选择匹配所有指定的属性筛选器的元素</p>
+            <kbd>$('input[id][name$="value"]')</kbd>
+        </div>
+        <div class="col-md-8">
+            <input id="inputId1" name="inputvalue"/>
+            <input name="input2value"/>
+            <input id="inputId2" name="inputvalue2"/>
+            <input name="input2value2"/>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 基础选择器</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "*" )</h4>
+
+            <p>描述: 选择所有元素.</p>
+            <kbd>$("*")</kbd>
+        </div>
+        <div class="col-md-8">
+            <div id="test">
+                <div>DIV</div>
+                <span>SPAN</span>
+
+                <p>P
+                    <button>Button</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ".class" )</h4>
+
+            <p>描述: 选择给定样式类名的所有元素。</p>
+            <kbd>$(".myClass")</kbd>
+        </div>
+        <div class="col-md-8">
+            <div class="notMe">div class="notMe"</div>
+            <div class="myClass">div class="myClass"</div>
+            <span class="myClass">span class="myClass"</span>
+
+            <div class="myclass">span class="myclass"</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "element" )</h4>
+
+            <p>描述: 根据给定（html）标记名称选择所有的元素。</p>
+            <kbd>$("address")</kbd>
+        </div>
+        <div class="col-md-8">
+            <address>add1</address>
+            <address>add2</address>
+            <p>add3</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "#id" )</h4>
+
+            <p>描述: 选择一个具有给定id属性的单个元素。 </p>
+            <kbd>$("#divtest1")</kbd>
+        </div>
+        <div class="col-md-8">
+            <div id="divtest1"><p>id="divtest1"</p></div>
+
+            <div id="divtest2">id="divtest2"</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "selector1, selector2, selectorN" )</h4>
+
+            <p>描述: 将每一个选择器匹配到的元素合并后一起返回。</p>
+            <kbd>$("div,span,p.ptest1")</kbd>
+        </div>
+        <div class="col-md-8" id="mutiply">
+            <div>div</div>
+            <p class="ptest1">p class="ptest1"</p>
+
+            <p class="ptest2">p class="ptest2"</p>
+            <span>span</span>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 基础过滤</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":animated" )</h4>
+
+            <p>描述: 选择所有正在执行动画效果的元素.</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":animated")</small>
+            <br>
+            <kbd>$(".divAnimate:animated")</kbd>
+        </div>
+        <div class="col-md-8">
+
+            <button id="run">Run</button>
+
+            <div class="divAnimate"></div>
+            <div id="mover" class="divAnimate"></div>
+            <div class="divAnimate"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":eq(index)" )</h4>
+
+            <p>描述: 在匹配的集合中选择索引值为index的元素。(index:从0开始计数，-index:从最后一个开始计数)</p>
+            <small>获得更佳的性能，请使用$("your-css-selector").eq(index)代替</small>
+            <br>
+            <kbd>$("td:eq(2)")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table border="1">
+                <tr>
+                    <td>TD #0</td>
+                    <td>TD #1</td>
+                    <td>TD #2</td>
+                </tr>
+                <tr>
+                    <td>TD #3</td>
+                    <td>TD #4</td>
+                    <td>TD #5</td>
+                </tr>
+                <tr>
+                    <td>TD #6</td>
+                    <td>TD #7</td>
+                    <td>TD #8</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <ul class="nav">
+                <li>List 1, item 1</li>
+                <li>List 1, item 2</li>
+                <li>List 1, item 3</li>
+            </ul>
+            <ul class="nav">
+                <li>List 2, item 1</li>
+                <li>List 2, item 2</li>
+                <li>List 2, item 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":even" )</h4>
+
+            <p>描述: 选择所引值为偶数的元素，从 0 开始计数。</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":even")</small>
+            <br>
+            <kbd>$("tr:even")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table border="1" id="evenId">
+                <tr>
+                    <td>Row with Index #0</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #1</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #2</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":first" )</h4>
+
+            <p>描述: 选择第一个匹配的元素。(当于:eq(0))</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":first")</small>
+            <br>
+            <kbd>$("tr:first")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table id="firstId">
+                <tr>
+                    <td>Row 1</td>
+                </tr>
+                <tr>
+                    <td>Row 2</td>
+                </tr>
+                <tr>
+                    <td>Row 3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":focus" )</h4>
+
+            <p>描述: 选择当前获取焦点的元素。</p>
+            <br>
+            <kbd>$(":focus")</kbd>
+        </div>
+        <div class="col-md-8" id="focusId">
+            <input tabIndex="1">
+            <input tabIndex="2">
+            <select tabIndex="3">
+                <option>select menu</option>
+            </select>
+
+            <div tabIndex="4">
+                a div
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":gt(index)" )</h4>
+
+            <p>描述: 选择匹配集合中所有大于给定index（索引值）的元素。(index:从0开始计数，-index:从最后一个开始计数)</p>
+            <small>获得更佳的性能，请使用$("your-css-selector").slice(index)代替</small>
+            <br>
+            <kbd>$("td:gt(4)")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table border="1" id="gtId">
+                <tr>
+                    <td>TD #0</td>
+                    <td>TD #1</td>
+                    <td>TD #2</td>
+                </tr>
+                <tr>
+                    <td>TD #3</td>
+                    <td>TD #4</td>
+                    <td>TD #5</td>
+                </tr>
+                <tr>
+                    <td>TD #6</td>
+                    <td>TD #7</td>
+                    <td>TD #8</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":header" )</h4>
+
+            <p>描述: 选择所有标题元素，像h1, h2, h3 等。</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":header")</small>
+            <br>
+            <kbd>$(":header")</kbd>
+        </div>
+        <div class="col-md-8" id="headerId">
+            <h1>Header 1</h1>
+
+            <p>Contents 1</p>
+
+            <h2>Header 2</h2>
+
+            <p>Contents 2</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":lang(language)" )</h4>
+
+            <p>描述: 选择指定语言的所有元素。</p>
+            <br>
+            <kbd>$(":lang(en)")</kbd>
+        </div>
+        <div class="col-md-8" id="langId">
+            <h3>USA</h3>
+
+            <div lang="en-us">red
+                <div>white
+                    <div>and blue</div>
+                </div>
+            </div>
+
+            <h3>España</h3>
+
+            <div lang="es-es">rojo
+                <div>amarillo
+                    <div>y rojo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "tr:last" )</h4>
+
+            <p>描述: 选择最后一个匹配的元素。</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":last")</small>
+            <br>
+            <kbd>$(":last")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table id="lastId">
+                <tr>
+                    <td>First Row</td>
+                </tr>
+                <tr>
+                    <td>Middle Row</td>
+                </tr>
+                <tr>
+                    <td>Last Row</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":lt(index)" )</h4>
+
+            <p>描述: 选择匹配集合中所有索引值小于给定index参数的元素。(index:从0开始计数，-index:从最后一个开始计数)</p>
+            <small>获得更佳的性能，请使用$("your-css-selector").slice(0,index)代替</small>
+            <br>
+            <kbd>$("td:gt(4)")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table border="1" id="ltId">
+                <tr>
+                    <td>TD #0</td>
+                    <td>TD #1</td>
+                    <td>TD #2</td>
+                </tr>
+                <tr>
+                    <td>TD #3</td>
+                    <td>TD #4</td>
+                    <td>TD #5</td>
+                </tr>
+                <tr>
+                    <td>TD #6</td>
+                    <td>TD #7</td>
+                    <td>TD #8</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":not(selector)" )</h4>
+
+            <p>描述: 选择所有元素去除不匹配给定的选择器的元素。</p>
+            <small>.not()方法可以让代码更易读。而使用 :not() 通常会构建出一个非常复杂的选择器。所以大多数情况下，推荐使用 .not()方法。</small>
+            <br>
+            <kbd>$("input :not(:checked)")</kbd>
+        </div>
+        <div class="col-md-8" id="notId">
+            <div>
+                <input type="checkbox" name="a"/>
+                <span>选项1</span>
+            </div>
+
+            <div>
+                <input type="checkbox" name="b"/>
+                <span>选项2</span>
+
+            </div>
+            <div>
+                <input type="checkbox" name="c" checked="checked"/>
+                <span>选项3</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":odd" )</h4>
+
+            <p>描述: 选择所引值为奇数的元素，从 0 开始计数。</p>
+            <small>获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":odd")</small>
+            <br>
+            <kbd>$("tr:odd")</kbd>
+        </div>
+        <div class="col-md-8">
+            <table border="1" id="oddId">
+                <tr>
+                    <td>Row with Index #0</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #1</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #2</td>
+                </tr>
+                <tr>
+                    <td>Row with Index #3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":root" )</h4>
+
+            <p>描述: 选择该文档的根元素。</p>
+            <br>
+            <kbd>$(":root")</kbd>
+        </div>
+        <div class="col-md-8">
+            <p>The root of this document is: <b id="rootId"></b></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":target" )</h4>
+
+            <p>描述: 选择由文档URI的格式化识别码表示的目标元素。</p>
+            <br>
+            <kbd>$(":target")</kbd>
+        </div>
+        <div class="col-md-8" id="targetId">
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 子元素过滤</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":first-child" )</h4>
+
+            <p>描述: 选择所有父级元素下的第一个子元素。</p>
+            <small>虽然:first只匹配一个单独的元素，但是:first-child选择器可以匹配多个：即为每个父级元素匹配第一个子元素。这相当于:nth-child(1)</small>
+            <br>
+            <kbd>$("span:first-child")</kbd>
+        </div>
+        <div class="col-md-8" id="firstChildId">
+            <div>
+                <span>John,</span>
+                <span>Karl,</span>
+                <span>Brandon</span>
+
+            </div>
+            <div>
+                <span>Glen,</span>
+                <span>Tane,</span>
+                <span>Ralph</span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":first-of-type" )</h4>
+
+            <p>描述: 选择所有相同的元素名称的第一个兄弟元素。</p>
+            <small>:first-of-type 选择器匹配元素，在文档树中，相同的父元素并且在其他相同的元素名称之前。</small>
+            <br>
+            <kbd>$("span:first-of-type")</kbd>
+        </div>
+        <div class="col-md-8" id="firstOfTypeId">
+            <div>
+                <span>Corey,</span>
+                <span>Yehuda,</span>
+                <span>Adam,</span>
+                <span>Todd</span>
+            </div>
+            <div>
+                <b>Nobody,</b>
+                <span>Jörn,</span>
+                <span>Scott,</span>
+                <span>Timo</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":last-child" )</h4>
+
+            <p>描述: 选择所有父级元素下的最后一个子元素。</p>
+            <small>:last 只匹配一个单独的元素， :last-child 选择器可以匹配多个元素：即，为每个父级元素匹配最后一个子元素。</small>
+            <br>
+            <kbd>$("span:last-child")</kbd>
+        </div>
+        <div class="col-md-8" id="lastChildId">
+            <div>
+                <span>John,</span>
+                <span>Karl,</span>
+                <span>Brandon,</span>
+                <span>Sam</span>
+            </div>
+            <div>
+                <span>Glen,</span>
+                <span>Tane,</span>
+                <span>Ralph,</span>
+                <span>David</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":last-of-type" )</h4>
+
+            <p>描述: 选择的所有元素之间具有相同元素名称的最后一个兄弟元素。</p>
+            <small>last-of-type 选择器匹配在文档树中具有相同的父元素并且相同的元素名称，后面没有任何其他元素 的元素。</small>
+            <br>
+            <kbd>$("span:last-of-type")</kbd>
+        </div>
+        <div class="col-md-8" id="lastOfTypeId">
+            <div>
+                <span>Corey,</span>
+                <span>Yehuda,</span>
+                <span>Adam,</span>
+                <span>Todd</span>
+            </div>
+            <div>
+                <span>Jörn,</span>
+                <span>Scott,</span>
+                <span>Timo,</span>
+                <b>Nobody</b>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":nth-child(index/even/odd/equation)" )</h4>
+
+            <p>描述: 选择的他们所有父元素的第n个子元素。</p>
+            <small>index: 每个相匹配子元素的索引值，从1开始，也可以是字符串 even 或 odd，或一个方程式( 例如 :nth-child(even), :nth-child(4n) )。</small>
+            <br>
+            <kbd>$("li:nth-child(2)")</kbd>
+            <br>
+            <br>
+            <br>
+            <small>这里的 :even 和 :odd 会无视它们的父元素，而仅仅把元素列表中的元素每隔一个过滤出来。而 :nth-child 则会计算子元素在各自父元素中的索引值。</small>
+        </div>
+        <div class="col-md-8" id="nthChildId">
+            <div>
+                <ul>
+                    <li>John</li>
+                    <li>Karl</li>
+                    <li>Brandon</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Sam</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Glen</li>
+                    <li>Tane</li>
+                    <li>Ralph</li>
+                    <li>David</li>
+                </ul>
+            </div>
+
+            <div id="nthChildId2">
+                <div>
+                    <button>:nth-child(even)</button>
+                    <button>:nth-child(odd)</button>
+                    <button>:nth-child(3n)</button>
+                    <button>:nth-child(2)</button>
+                </div>
+                <div>
+                    <button>:nth-child(3n+1)</button>
+                    <button>:nth-child(3n+2)</button>
+                    <button>:even</button>
+                    <button>:odd</button>
+                </div>
+
+                <div>
+                    <table>
+                        <tr>
+                            <td>John</td>
+                        </tr>
+                        <tr>
+                            <td>Karl</td>
+                        </tr>
+                        <tr>
+                            <td>Brandon</td>
+                        </tr>
+                        <tr>
+                            <td>Benjamin</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>Sam</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>Glen</td>
+                        </tr>
+                        <tr>
+                            <td>Tane</td>
+                        </tr>
+                        <tr>
+                            <td>Ralph</td>
+                        </tr>
+                        <tr>
+                            <td>David</td>
+                        </tr>
+                        <tr>
+                            <td>Mike</td>
+                        </tr>
+                        <tr>
+                            <td>Dan</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <span style="color:#d9534f">tr<span id="inner"></span></span>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":nth-last-child(index/even/odd/equation)" )</h4>
+
+            <p>描述: 选择所有他们父元素的第n个子元素。计数从最后一个元素开始到第一个。</p>
+            <br>
+            <kbd>$("li:nth-last-child(2)")</kbd>
+        </div>
+        <div class="col-md-8" id="nthLastChildId">
+            <div>
+                <ul>
+                    <li>John</li>
+                    <li>Karl</li>
+                    <li>Adam</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Dan</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Dave</li>
+                    <li>Rick</li>
+                    <li>Timmy</li>
+                    <li>Gibson</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":nth-last-of-type(index/even/odd/equation)" )</h4>
+
+            <p>描述: 选择的所有他们的父级元素的第n个子元素，计数从最后一个元素到第一个。</p>
+            <small>index: 每个相匹配子元素的索引值，从最后一个开始(1)，也可以是字符串 even 或 odd，或一个方程式( 例如 :nth-last-of-type(even),
+                :nth-last-of-type(4n))
+            </small>
+            <br>
+            <kbd>$("li:nth-last-of-type(2)")</kbd>
+        </div>
+        <div class="col-md-8" id="nthLastOfTypeId">
+            <div>
+                <ul>
+                    <li>John</li>
+                    <li>Karl</li>
+                    <li>Adam</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Dan</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Dave</li>
+                    <li>Rick</li>
+                    <li>Timmy</li>
+                    <li>Gibson</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":nth-of-type(index/even/odd/equation)" )</h4>
+
+            <p>描述: 选择同属于一个父元素之下，并且标签名相同的子元素中的第n个。</p>
+            <small>index: 每个相匹配子元素的索引值，从1开始，也可以是字符串 even 或 odd，或一个方程式( 例如 :nth-of-type(even), :nth-of-type(4n))。</small>
+            <br>
+            <kbd>$("li:nth-of-type(2)")</kbd>
+            <br>
+            <br>
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#nth-show">
+                点击查看详细说明
+            </button>
+            <div class="modal fade" id="nth-show" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" type="button" aria-label="Close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                            <h4 class="modal-title">nth-child与nth-of-type不同说明</h4>
+                        </div>
+
+                        <div class="modal-body well">
+                            <p><pre>&lt;div class=&quot;test&quot;&gt;<br>
+			&lt;p&gt;A元素&lt;/p&gt;<br>
+			&lt;div&gt;B元素&lt;/div&gt;<br>
+			&lt;p&gt;C元素&lt;/p&gt;<br>
+			&lt;p&gt;D元素&lt;/p&gt;<br>
+			&lt;/div&gt;</pre>
+                            </p>
+                            <p>看下面的代码</p>
+
+                            <p><pre>
+			$(&quot;p:nth-of-type(2)&quot;)//选择的是C元素<br>
+			$(&quot;p:nth-child(2)&quot;)//什么元素也没选中</pre>
+                            </p>
+                            <p>两者比较：</p>
+                            <ul>
+                                <li>这里<code>p:nth-of-type(2)</code>选择器选择父元素的第二个段落p元素
+                                    ，它不管段落p元素在什么位置，段落p元素可能是该父级元素的第3个或者第5个，也可以是第n个子元素，这里n肯定大于2，只要父级元素<code>&lt;div class=&quot;test&quot;&gt;</code>有两个以上的段落p子元素，他就肯定能选择到第二个段落p元素。
+                                </li>
+                                <li>这里<code>p:nth-child(2)</code>选择器选择不到任何元素，<code>p:nth-child(2)</code>选择器要满足的条件是：
+                                    <ul>
+                                        <li>1、是一个段落p元素；</li>
+                                        <li>2、是父元素的第二个子元素</li>
+                                    </ul>
+                                    上述的HTML结构中，<code>&lt;div class=&quot;test&quot;&gt;</code>的第二个子元素是div元素，而不是p元素，所以不满足条件，这样就选择不到任何元素
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" id="nthOfTypeId">
+            <div>
+                <span>John</span>,
+                <b>Kim</b>,
+                <span>Adam</span>,
+                <b>Rafael</b>,
+                <span>Oleg</span>
+            </div>
+            <div>
+                <b>Dave</b>,
+                <span>Ann</span>
+            </div>
+            <div>
+                <i><span>Maurice</span></i>,
+                <span>Richard</span>,
+                <span>Ralph</span>,
+                <span>Jason</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":only-child" )</h4>
+
+            <p>描述: 如果某个元素是其父元素的唯一子元素，那么它就会被选中。</p>
+            <kbd>$("button:only-child")</kbd>
+        </div>
+        <div class="col-md-8" id="onlyChildId">
+            <div>
+                <button>Sibling!</button>
+                <button>Sibling!</button>
+            </div>
+
+            <div>
+                <button>Sibling!</button>
+            </div>
+
+            <div>
+                <button>Sibling!</button>
+                <span>Sibling!</span>
+            </div>
+
+            <div>
+                None
+            </div>
+
+            <div>
+                <button>Sibling!</button>
+                <button>Sibling!</button>
+                <button>Sibling!</button>
+
+            </div>
+            <div>
+                <button>Sibling!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":only-of-type" )</h4>
+
+            <p>描述: 选择所有没有兄弟元素，且具有相同的元素名称的元素。</p>
+            <kbd>$("button:only-of-type")</kbd>
+        </div>
+        <div class="col-md-8" id="onlyOfTypeId">
+            <div>
+                <button>Sibling!</button>
+                <button>Sibling!</button>
+            </div>
+
+            <div>
+                <button>Sibling!</button>
+            </div>
+            <div>
+                None
+            </div>
+
+            <div>
+                <button>Sibling!</button>
+                <span>Sibling!</span>
+                <span>Sibling!</span>
+
+            </div>
+            <div>
+                <button>Sibling!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 内容过滤</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":contains(text)" )</h4>
+
+            <p>描述: 选择所有包含指定文本的元素。</p>
+            <small>text: 用来查找的一个文本字符串。这是区分大小写的</small>
+            <br>
+            <kbd>$("div:contains('John')")</kbd>
+        </div>
+        <div class="col-md-8" id="containsId">
+            <div>John Resig</div>
+            <div>George Martin</div>
+            <div>Malcom John Sinclair</div>
+            <div>Malcom john Sinclair</div>
+            <div>J. Ohn</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":empty" )</h4>
+
+            <p>描述: 选择所有没有子元素的元素（包括文本节点）。</p>
+            <kbd>$("td:empty")</kbd>
+        </div>
+        <div class="col-md-8" id="emptyId">
+            <table border="1">
+                <tr>
+                    <td>TD #0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TD #2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>TD#5</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":has(selector)" )</h4>
+
+            <p>描述: 选择元素其中至少包含指定选择器匹配的一个种元素。</p>
+            <small>如果表达式 $('div:has(p)') 匹配一个&lt;div&gt;，那么应有一个&lt;p&gt;存在于 &lt;div&gt; 后代元素中的任何地方，不是直接的子元素也可以</small>
+            <br>
+            <small>为了获得更佳的性能，请使用$("your-css-selector").has(selector/DOMElement) 代替。</small>
+            <br>
+            <kbd>$("div:has(p)")</kbd>
+        </div>
+        <div class="col-md-8" id="hasId">
+            <div><p>Hello in a paragraph</p></div>
+            <div>Hello again! (with no paragraph)</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":parent" )</h4>
+
+            <p>描述: 选择所有含有子元素或者文本的父级元素。</p>
+            <small>为了获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":parent")</small>
+            <br>
+            <kbd>$("td:parent")</kbd>
+        </div>
+        <div class="col-md-8" id="parentId">
+            <table border="1">
+                <tr>
+                    <td>Value 1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Value 2</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 表单</h1>
+    </div>
+
+
+
+</div>
+</body>
+</html>

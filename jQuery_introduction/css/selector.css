@@ -1,0 +1,118 @@
+a {
+    display: inline-block;
+}
+
+.row {
+    margin-top: 10px;
+    border-top: dashed crimson 1px;
+    padding: 10px;
+}
+
+.divAnimate {
+    background: yellow;
+    border: 1px solid #a2a2a2;
+    width: 80px;
+    height: 80px;
+    margin: 0 5px;
+    float: left;
+}
+
+.divAnimate.colored {
+    background: green;
+}
+
+.foo {
+    color: blue;
+    background-color: #d9534f;
+}
+
+.focused {
+    background: #abcdef;
+}
+
+.usa {
+    background-color: #f00;
+    color: #fff;
+}
+
+.usa .usa {
+    background-color: #fff;
+    color: #000;
+}
+
+.usa .usa .usa {
+    background-color: #00f;
+    color: #fff;
+}
+
+.spain {
+    background-color: #f00;
+    color: #ff0;
+}
+
+.spain .spain {
+    background-color: #ff0;
+    color: #f00;
+    line-height: 3em;
+}
+
+.spain .spain .spain {
+    background-color: #f00;
+    color: #ff0;
+    line-height: 1.5em;
+}
+
+.sogreen {
+    color: green;
+    font-weight: bolder;
+}
+
+.fot {
+    color: red;
+    font-size: 120%;
+    font-style: italic;
+}
+
+.solast {
+    text-decoration: line-through;
+}
+
+#nthChildId2 div {
+    float: left;
+    margin: 10px;
+    font-size: 10px;
+    border: 1px solid black;
+}
+
+#nthChildId2 button {
+    display: block;
+    font-size: 12px;
+    width: 100px;
+}
+
+#nthChildId2 td {
+    width: 50px;
+    text-align: center;
+}
+
+.nth {
+    color: red;
+}
+
+#onlyChildId div,
+#onlyOfTypeId div {
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    float: left;
+    background: #b9e
+}
+
+.has-test {
+    border: 3px inset red;
+}
+
+#parentId td {
+    width: 40px;
+    background: green;
+}
