@@ -8,6 +8,7 @@
 
     <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
     <script src="../libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../libs/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 
     <script>
         $(function () {
@@ -42,12 +43,13 @@
             });
 
             $(".form_datetime5").datetimepicker({
+                language:"zh-CN",
                 format: 'dd MM yyyy - hh:ii',
                 todayBtn: 1,
                 autoclose: 1,
                 startView: 3,
-                linkField: mirrorField
-            });
+            })
+            ;
         });
 
     </script>
@@ -98,9 +100,9 @@
             </div>
         </div>
 
-        <!-- Mirror field -->
+        <!-- 多国语言 -->
         <div class="form-group">
-            <label class="col-md-2 control-label">Mirror field</label>
+            <label class="col-md-2 control-label">多国语言</label>
 
             <div class="input-group date form_datetime5 col-md-4">
                 <input class="form-control" type="text" size="16" value="" readonly>
@@ -109,7 +111,6 @@
             </div>
 
         </div>
-        <input type="text" class="form-control" id="mirrorField" value="" readonly>
 
 
     </fieldset>

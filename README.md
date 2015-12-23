@@ -14,6 +14,7 @@ Bootstrap中文网:http://www.bootcss.com/<br>
 LESS教程:http://www.1024i.com/demo/less/index.html<br>
 Node.js中文网:http://nodejs.cn/<br>
 日期时间选择器:http://www.bootcss.com/p/bootstrap-datetimepicker/index.htm<br>
+图表:http://www.bootcss.com/p/chart.js/<br>
          
 
 进度：<br>
