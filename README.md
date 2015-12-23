@@ -14,6 +14,7 @@ Bootstrap中文网:http://www.bootcss.com/<br>
 LESS教程:http://www.1024i.com/demo/less/index.html<br>
 Node.js中文网:http://nodejs.cn/<br>
 日期时间选择器:http://www.bootcss.com/p/bootstrap-datetimepicker/index.htm<br>
+图表官网:http://www.chartjs.org/docs/<br>
 图表:http://www.bootcss.com/p/chart.js/<br>
          
 
@@ -28,3 +29,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/21  加入JS插件之按钮，Collapse，carousel，affix 。<br>
 2015/12/21  加入Bootstrap日期和时间选择器。<br>
 2015/12/22  加入jQuery之属性选择器。<br>
+2015/12/23  加入Bootstrap图表。<br>
