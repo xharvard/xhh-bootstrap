@@ -116,3 +116,52 @@ a {
     width: 40px;
     background: green;
 }
+
+.marked {
+    background-color: yellow;
+    border: 3px red solid;
+}
+
+#prevSiblingId div,
+#prevSiblingId span {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background: #bbffaa;
+    float: left;
+    font-size: 14px;
+}
+
+#prevSiblingId div #small {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+    background: #fab;
+}
+
+.starthidden {
+    display: none;
+}
+
+#hiddenId div {
+    width: 70px;
+    height: 40px;
+    background: #ee77ff;
+    margin: 5px;
+    float: left;
+}
+
+#hiddenId span {
+    display: block;
+    clear: left;
+    color: red;
+}
+
+#visibleId div {
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    border: 3px outset green;
+    float: left;
+}

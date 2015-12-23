@@ -1120,7 +1120,710 @@
         <h1>选择器之 表单</h1>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":button" )</h4>
 
+            <p>描述: 选择所有按钮元素和类型为按钮的元素。</p>
+            <small>一个和$(":button")等价的选择器，使用有效的CSS是$("button, input[type='button']")。</small>
+            <br>
+            <small>为了获得更佳的性能，首先使用纯CSS选择器选择元素，然后使用.filter(":button")</small>
+            <br>
+            <kbd>$(":button")</kbd>
+        </div>
+        <div class="col-md-8" id="buttonId">
+            <form>
+                <fieldset>
+                    <input type="button" value="Input Button"/>
+                    <input type="checkbox"/>
+
+                    <input type="file"/>
+                    <input type="hidden"/>
+                    <input type="image"/>
+
+                    <input type="password"/>
+                    <input type="radio"/>
+                    <input type="reset"/>
+
+                    <input type="submit"/>
+                    <input type="text"/>
+                    <select>
+                        <option>Option
+                        <option/>
+                    </select>
+
+                    <textarea></textarea>
+                    <button>Button</button>
+                </fieldset>
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":checkbox" )</h4>
+
+            <p>描述: 选择所有类型为复选框的元素。</p>
+            <small>$(':checkbox') 等同于 $('[type=checkbox]')</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="checkbox"]代替</small>
+            <br>
+            <kbd>$("input:checkbox")</kbd>
+        </div>
+        <div class="col-md-8" id="checkboxId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="checkbox"/>
+                <input type="file"/>
+                <input type="hidden"/>
+
+                <input type="image"/>
+                <input type="password"/>
+                <input type="radio"/>
+
+                <input type="reset"/>
+                <input type="submit"/>
+                <input type="text"/>
+
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":checked" )</h4>
+
+            <p>描述: 匹配所有勾选的元素。</p>
+            <small>:checked 选择器适用于复选框和单选框</small>
+            <br>
+            <kbd>$("input:checked")</kbd>
+        </div>
+        <div class="col-md-8" id="checkedId">
+            <form>
+                <p>
+                    <input type="checkbox" name="checktest" value="Hourly" checked="checked">
+                    <input type="checkbox" name="checktest" value="Daily">
+                    <input type="checkbox" name="checktest" value="Weekly">
+                    <input type="checkbox" name="checktest" value="Monthly" checked>
+                    <input type="checkbox" name="checktest" value="Yearly">
+                </p>
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":disabled" )</h4>
+
+            <p>描述: 选择所有被禁用的元素。</p>
+            <kbd>$("input:disabled")</kbd>
+        </div>
+        <div class="col-md-8" id="disabledId">
+            <form>
+                <input name="email" disabled="disabled"/>
+                <input name="id"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":enabled" )</h4>
+
+            <p>描述: 选择所有可用的（注：未被禁用的元素）元素。</p>
+            <kbd>$("input:disabled")</kbd>
+        </div>
+        <div class="col-md-8" id="enabledId">
+            <form>
+                <input name="email" disabled="disabled"/>
+                <input name="id"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":file" )</h4>
+
+            <p>描述: 选择所有类型为文件（file）的元素。</p>
+            <small>:file 等价于 [type="file"]</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="file"]代替</small>
+            <br>
+            <kbd>$("input:file")</kbd>
+        </div>
+        <div class="col-md-8" id="fileId">
+            <form>
+                <fieldset>
+                    <input type="button" value="Input Button"/>
+                    <input type="checkbox"/>
+
+                    <input type="file"/>
+                    <input type="hidden"/>
+                    <input type="image"/>
+
+                    <input type="password"/>
+                    <input type="radio"/>
+                    <input type="reset"/>
+
+                    <input type="submit"/>
+                    <input type="text"/>
+                    <select>
+                        <option>Option
+                        <option/>
+                    </select>
+
+                    <textarea></textarea>
+                    <button>Button</button>
+                </fieldset>
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":image" )</h4>
+
+            <p>描述: 选择所有图像类型的元素。</p>
+            <small>:image 等价于 [type="image"]</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="image"]代替</small>
+            <br>
+            <kbd>$("input:image")</kbd>
+        </div>
+        <div class="col-md-8" id="imageId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio"/>
+                <input type="reset"/>
+
+                <input type="submit"/>
+                <input type="text"/>
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":input" )</h4>
+
+            <p>描述: 选择所有 input, textarea, select 和 button 元素.</p>
+            <small>:input 选择器基本上选择所有表单控件。</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用.filter(":input")</small>
+            <br>
+            <kbd>$(":input")</kbd>
+        </div>
+        <div class="col-md-8" id="inputId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio"/>
+                <input type="reset"/>
+
+                <input type="submit"/>
+                <input type="text"/>
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":password" )</h4>
+
+            <p>描述: 选择所有类型为密码的元素。</p>
+            <small>$(':password')等价于$('[type=password]')</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="password"]代替</small>
+            <br>
+            <kbd>$("input:password")</kbd>
+        </div>
+        <div class="col-md-8" id="passwordId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio"/>
+                <input type="reset"/>
+
+                <input type="submit"/>
+                <input type="text"/>
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":radio" )</h4>
+
+            <p>描述: 选择所有类型为单选框的元素。</p>
+            <small>$(':radio')等价于$('[type=radio]')</small>
+            <br>
+            <small>要选择一个单选按钮相关的设置，你可以使用：$('input[name=gender]:radio')</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="radio"]代替</small>
+            <br>
+            <kbd>$("input:radio")</kbd>
+        </div>
+        <div class="col-md-8" id="radioId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio" name="asdf"/>
+                <input type="radio" name="asdf"/>
+
+                <input type="reset"/>
+                <input type="submit"/>
+                <input type="text"/>
+
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":reset" )</h4>
+
+            <p>描述: 选择所有类型为重置的元素。</p>
+            <small>$(':radio')等价于$('[type=reset]')</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="reset"]代替</small>
+            <br>
+            <kbd>$("input:reset")</kbd>
+        </div>
+        <div class="col-md-8" id="resetId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio"/>
+                <input type="reset"/>
+
+                <input type="submit"/>
+                <input type="text"/>
+                <select>
+                    <option>Option
+                    <option/>
+                </select>
+
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":selected" )</h4>
+
+            <p>描述: 获取 select 元素中所有被选中的元素。</p>
+            <small>:selected 选择器只为适用于为&lt;option&gt;元素</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用.filter(":selected")代替</small>
+            <br>
+            <kbd>$("option:selected")</kbd>
+        </div>
+        <div class="col-md-8" id="selectedId">
+            <select name="garden" multiple="multiple">
+                <option>Flowers</option>
+                <option selected="selected">Shrubs</option>
+                <option>Trees</option>
+                <option selected="selected">Bushes</option>
+                <option>Grass</option>
+                <option>Dirt</option>
+            </select>
+
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":submit" )</h4>
+
+            <p>描述: 选择所有类型为提交的元素。</p>
+            <small>:submit选择通常适用于按钮或input元素。</small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="submit"]代替</small>
+            <br>
+            <kbd>$("td:submit")</kbd>
+        </div>
+        <div class="col-md-8" id="submitId">
+            <form>
+                <table id="exampleTable" border="1" cellpadding="10" align="center">
+                    <tr>
+                        <th>
+                            Element Type
+                        </th>
+                        <th>
+                            Element
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Input Button"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="file"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="hidden"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="image"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio"/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="reset"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select>
+                                <option>Option</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button>Button</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Button type="submit"</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":text" )</h4>
+
+            <p>描述: 选择所有类型为文本的元素。</p>
+            <small>$('&lt;input&gt;').is('[type=text]'); // false<br>
+                $('&lt;input&gt;').is(':text'); // true
+            </small>
+            <br>
+            <small>为了获得更佳的性能，建议使用[type="text"]代替</small>
+            <br>
+            <kbd>$("input:text")</kbd>
+        </div>
+        <div class="col-md-8" id="textId">
+            <form>
+                <input type="button" value="Input Button"/>
+                <input type="checkbox"/>
+
+                <input type="file"/>
+                <input type="hidden"/>
+                <input type="image"/>
+
+                <input type="password"/>
+                <input type="radio"/>
+                <input type="reset"/>
+
+                <input type="submit"/>
+                <input type="text"/>
+                <select>
+                    <option>Option</option>
+                </select>
+
+                <textarea></textarea>
+                <button>Button</button>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 层级</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "parent > child" )</h4>
+
+            <p>描述: 选择所有指定“parent”元素中指定的"child"的直接子元素。</p>
+            <kbd>$("ul.topnav > li")</kbd>
+        </div>
+        <div class="col-md-8" id="parentChildId">
+            <ul class="topnav">
+                <li>Item 1</li>
+                <li>Item 2
+                    <ul>
+                        <li>Nested item 1</li>
+                        <li>Nested item 2</li>
+                        <li>Nested item 3</li>
+                    </ul>
+                </li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "ancestor descendant" )</h4>
+
+            <p>描述: 选择给定的祖先元素的所有后代元素。</p>
+            <small>一个元素的后代可能是该元素的一个孩子，孙子，曾孙等。</small>
+            <br>
+            <kbd>$("form input")</kbd>
+        </div>
+        <div class="col-md-8" id="ancestorDescendantId">
+            <form>
+                <div>Form is surrounded by the green outline</div>
+                <label>Child:</label>
+                <input name="name"/>
+
+                <fieldset>
+                    <label>Grandchild:</label>
+                    <input name="newsletter"/>
+                </fieldset>
+
+            </form>
+            Sibling to form: <input name="none"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "prev + next" )</h4>
+
+            <p>描述: 选择所有紧接在 “prev” 元素后的 “next” 元素</p>
+            <kbd>$("label + input")</kbd>
+        </div>
+        <div class="col-md-8" id="prevNextId">
+            <form>
+                <label>Name:</label>
+                <input name="name"/>
+                <fieldset>
+                    <label>Newsletter:</label>
+                    <input name="newsletter"/>
+                </fieldset>
+                <fieldset>
+                    <label>Newsletter:</label>
+                    <textarea rows="1">texts</textarea>
+                    <input name="newsletter2"/>
+                </fieldset>
+            </form>
+            <input name="none"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( "prev ~ siblings" )</h4>
+
+            <p>描述: 匹配 “prev” 元素之后的所有 兄弟元素。具有相同的父元素，并匹配过滤“siblings”选择器。</p>
+            <small>(prev + next) 和 (prev ~ siblings)之间最值得注意的不同点是他们各自的可及之范围。前者只达到紧随的同级元素，后者扩展了该达到跟随其的所有同级元素。</small>
+            <br>
+            <kbd>$("#prev ~ div")</kbd>
+        </div>
+        <div class="col-md-8" id="prevSiblingId">
+            <div>div (doesn't match since before #prev)</div>
+            <span id="prev">span#prev</span>
+
+            <div>div sibling</div>
+            <div>div sibling
+                <div id="small">div niece</div>
+            </div>
+            <span>span sibling (not div)</span>
+
+            <div>div sibling</div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>选择器之 可见性过滤</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":hidden" )</h4>
+
+            <p>描述: 选择所有隐藏的元素。</p>
+            <samll>为了获得更佳的性能，请使用.filter(":hidden")代替。 </samll>
+            <div class="well">
+                元素可以被认为是隐藏的几个情况：
+                他们的CSS display值是none。
+                他们是type="hidden"的表单元素。
+                它们的宽度和高度都显式设置为0。
+                一个祖先元素是隐藏的，因此该元素是不会在页面上显示。
+                元素visibility: hidden或opacity: 0被认为是可见的，因为他们仍然占据布局空间。在动画，隐藏一个元素，该元素被认为是可见的直到动画结束。
+            </div>
+            <kbd>$(":hidden")</kbd>
+        </div>
+        <div class="col-md-8" id="hiddenId">
+            <span></span>
+            <div></div>
+            <div style="display:none;">Hider!</div>
+            <div></div>
+            <div class="starthidden">Hider!</div>
+            <div></div>
+
+            <form>
+                <input type="hidden"/>
+                <input type="hidden"/>
+                <input type="hidden"/>
+            </form>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery( ":visible" )</h4>
+
+            <p>描述: 选择所有可见的元素。</p>
+            <samll>为了获得更佳的性能，请使用.filter(":visible")代替。 </samll>
+            <div class="well">
+                如果元素中占据文档中一定的空间,元素被认为是可见的。可见元素的宽度或高度，是大于零。
+                元素的visibility: hidden 或 opacity: 0被认为是可见的，因为他们仍然占用空间布局。
+            </div>
+            <kbd>$(":hidden")</kbd>
+        </div>
+        <div class="col-md-8" id="visibleId">
+            <button>Show hidden to see they don't change</button>
+
+            <div></div>
+            <div class="starthidden"></div>
+            <div></div>
+            <div></div>
+            <div style="display:none;"></div>
+        </div>
+    </div>
 
 </div>
 </body>

@@ -145,7 +145,7 @@ $(document).ready(function () {
     // :nth-child
     $("#nthChildId ul li:nth-child(2)").append("<span style='color:blue;'> -2nd!</span>");
 
-    $("#nthChildId2 button").click(function(){
+    $("#nthChildId2 button").click(function () {
         var str = $(this).text();
         $("#nthChildId2 tr").css("background", "white");
         $("#nthChildId2 tr" + str).css("background", "red");
@@ -160,18 +160,18 @@ $(document).ready(function () {
 
     // :nth-of-type
     $("#nthOfTypeId span:nth-of-type(2)")
-        .append( "<span> is 2nd sibling span</span>" )
+        .append("<span> is 2nd sibling span</span>")
         .addClass("nth");
 
     // :only-child
-    $("#onlyChildId button:only-child").text("Alone").css("border","2px blue solid");
+    $("#onlyChildId button:only-child").text("Alone").css("border", "2px blue solid");
 
     // :only-of-type
-    $("#onlyOfTypeId button:only-of-type").text("Alone").css("border","2px blue solid");
+    $("#onlyOfTypeId button:only-of-type").text("Alone").css("border", "2px blue solid");
 
     // 内容过滤
     // :contains
-    $("#containsId div:contains('John')").css("text-decoration","underline");
+    $("#containsId div:contains('John')").css("text-decoration", "underline");
 
     // :empty
     $("#emptyId td:empty").text("Was empty!").css('background', 'rgb(255,220,200)');
@@ -180,9 +180,142 @@ $(document).ready(function () {
     $("#hasId div:has(p)").addClass("has-test");
 
     // :parent
-    $("#parentId td:parent").fadeTo(2000,0.5);
+    $("#parentId td:parent").fadeTo(2000, 0.5);
 
     // 表单
+    // :button
+    var buttons = $("#buttonId :button").addClass("marked");
+    $("#buttonId div").text("For this type jQuery found " + buttons.length + ".");
+    $("#buttonId form").submit(function () {
+        return false;
+    });
 
+    // :checkbox
+    var checkboxs = $("#checkboxId input:checkbox").wrap("<span></span>").parent().css({
+        background: "yellow",
+        border: "3px red solid"
+    });
+    $("#checkboxId div").text("For this type jQuery found " + checkboxs.length + ".").css("color", "red");
+    $("#checkboxId form").submit(function () {
+        return false;
+    });
+
+    // :checked
+    var countChecked = function () {
+        var n = $("#checkedId input:checked").length;
+        $("#checkedId div").text(n + (n === 1 ? " is" : " are") + "checked!");
+    };
+    countChecked();
+    $("#checkedId input[type='checkbox']").on("click", countChecked);
+
+    // disabled
+    $("#disabledId input:disabled").val("this is it");
+
+    // enabled
+    $("#enabledId input:enabled").val("this is it");
+
+    // :file
+    var files = $("#fileId input:file").css({background: "yellow", border: "3px red solid"});
+    $("#fileId div").text("For this type jQuery found " + files.length + ".").css("color", "red");
+    $("#fileId form").submit(function () {
+        return false;
+    });
+
+    // :image
+    var images = $("#imageId input:image").css({background: "yellow", border: "3px red solid"});
+    $("#imageId div").text("For this type jQuery found " + images.length + ".").css("color", "red");
+    $("#imageId form").submit(function () {
+        return false;
+    });
+
+    // :input
+    var inputs = $("#inputId :input");
+    var formChildren = $("#inputId form > *");
+    $("#inputId div").text("Found " + inputs.length + " inputs and the form has " +
+        formChildren.length + " children.").css("color", "red");
+    $("#inputId form").submit(function () {
+        return false;
+    });
+
+    // :password
+    var passwords = $("#passwordId input:password").css({background: "yellow", border: "3px red solid"});
+    $("#passwordId div").text("For this type jQuery found " + passwords.length + ".").css("color", "red");
+    $("#passwordId form").submit(function () {
+        return false;
+    });
+
+    // :radio
+    var radios = $("#radioId input:radio").wrap("<span></span>").parent().css({
+        background: "yellow",
+        border: "3px red solid"
+    });
+    $("#radioId div").text("For this type jQuery found " + radios.length + ".").css("color", "red");
+    $("#radioId form").submit(function () {
+        return false;
+    });
+
+    // :reset
+    var resets = $("#resetId input:reset").css({background: "yellow", border: "3px red solid"});
+    $("#resetId div").text("For this type jQuery found " + resets.length + ".").css("color", "red");
+    $("#resetId form").submit(function () {
+        return false;
+    });
+
+    // :selected
+    $("#selectedId select").change(function(){
+        var str="";
+        $("#selectedId option:selected").each(function(){
+            str += $(this).text() + " ";
+        });
+        $("#selectedId div").text(str);
+    }).trigger("change");
+
+    // :submit
+    var submits = $("#submitId td :submit").parent("td").css({background:"yellow", border:"3px red solid"}).end();
+    $("#result").text('jQuery matched ' + submits.length + ' elements.');
+
+    $("#exampleTable").find("td").each(function(i, el){     // el: td本身
+        var inputEl = $(el).children(),                     // inputEl: td里的元素
+            inputType = inputEl.attr('type') ? 'type="'+ inputEl.attr('type')+'"' : '';
+        $(el).before('<td>' + inputEl[0].nodeName + inputType + '</td>');
+    });
+
+    // :text
+    var texts = $("#textId input:text").css({background:"yellow", border:"3px red solid"});
+    $("#textId div").text("For this type jQuery found " + texts.length + ".").css("color", "red");
+    $("#textId form").submit(function () {
+        return false;
+    });
+
+
+    // 层级
+    // parent > child
+    $("#parentChildId ul.topnav > li").css("border", "3px double red");
+
+    // ancestor descendant
+    $("#ancestorDescendantId form input").css("border", "2px dotted blue");
+
+    // prev + next
+    $("#prevNextId label + input").css("color", "blue").val("Labeled!");
+
+    // prev ~ siblings
+    $("#prevSiblingId #prev ~ div").css("border", "3px groove blue");
+
+    // 可见性过滤
+    // :hidden
+    var hiddens = $("#hiddenId").find(":hidden").not("script");
+
+    $("#hiddenId span:first").text("Found " + hiddens.length + " hidden elements total.");
+    $("#hiddenId div:hidden").show(3000);
+    $("#hiddenId span:last").text("Found " + $("#hiddenId input:hidden").length + " hidden inputs.");
+
+    // :visible
+    $("#visibleId div:visible").click(function(){
+        $(this).css("background","yellow");
+    });
+
+    $("#visibleId button").click(function(){
+        $("#visibleId div:hidden").show("fast");
+    });
 
 });
