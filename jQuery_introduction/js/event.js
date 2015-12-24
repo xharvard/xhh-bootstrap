@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
 
     // 绑定事件处理器
-    // .bind()
+    // .bind()   .unbind()
     $("#bindId").bind("click", function (event) {
         var str = "(" + event.pageX + "," + event.pageY + ")";
         $("#bindSpanId").text("Click happened! " + str);
@@ -57,6 +57,15 @@ $(document).ready(function () {
 
     $("#customBindBtn").click(function () {
         $("#customBindId").trigger("myEvent", ["Kobe"]);
+    });
+
+
+    $("#bind1").click(function () {
+        $("body").on("click", "#theone1", aClick1).find("#theone1").text("can click");
+    });
+
+    $("#unbind1").click(function () {
+        $("body").off("click", "#theone1", aClick1).find("#theone1").text("Does nothing...");
     });
 
     // .delegate()
@@ -86,9 +95,87 @@ $(document).ready(function () {
             "  That's " + ++n + " total clicks.");
     });
 
+    // .trigger()
+    $("#triggerId button:first").click(function(){
+        update($("#triggerId span:first"));
+    });
+
+    $("#triggerId button:last").click(function(){
+        $("#triggerId button:first").trigger("click");
+        update($("#triggerId span:last"));
+    });
+
+    // .triggerHandler()
+    $("#old").click(function(){
+        $("#oldNewInput").trigger("focus");
+    });
+
+    $("#new").click(function(){
+        $("#oldNewInput").triggerHandler("focus");
+    });
+
+    $("#oldNewInput").focus(function(){
+        $("<span>Focused!</span>").appendTo("#thId").fadeOut(1000);
+    });
+
+    // 表单事件
+    // .blur()
+    $("#blurId").blur(function(){
+        $("#blurId").val("left Field 1");
+    });
+
+    // .change()
+    $("#changeId").change(function () {
+        var str = "";
+
+        $("#changeId option:selected").each(function () {
+            str += $(this).text() + " ";
+        });
+
+        $("#changeDivId").text(str);
+    });
+
+    // .focus()
+    $("#focusId input").focus(function () {
+        $(this).next("span").css("display","inline").fadeOut(2000);
+    });
+
+    // .focusIn()
+    $("#focusInId p").focusin(function () {
+        $(this).find("span").css("display","inline").fadeOut(4000);
+    });
+    
+    // .select()
+    $("#selectId input").select(function () {
+        $("#selectId div").text("Something was selected").show().fadeOut(1000);
+    });
+
+    // .submit()
+    $("#submitId form").submit(function () {
+        if($("#submitId input:first").val() == "correct"){
+            $("#submitId").find("span").text("Validated...").show();
+            return true;
+        }
+
+        $("#submitId").find("span").text("Not valid!").show().fadeOut(1000);
+        return false;
+    });
+
+
+    // 键盘事件
+
 
 });
 
+function aClick1() {
+    $("#show1").show().fadeOut("slow");
+}
+
 function aClick() {
     $("#show").show().fadeOut("slow");
+}
+
+function update(j){
+    var n = parseInt(j.text(),10);
+    j.text(n+1);
 }
