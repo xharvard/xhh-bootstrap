@@ -96,31 +96,31 @@ $(document).ready(function () {
     });
 
     // .trigger()
-    $("#triggerId button:first").click(function(){
+    $("#triggerId button:first").click(function () {
         update($("#triggerId span:first"));
     });
 
-    $("#triggerId button:last").click(function(){
+    $("#triggerId button:last").click(function () {
         $("#triggerId button:first").trigger("click");
         update($("#triggerId span:last"));
     });
 
     // .triggerHandler()
-    $("#old").click(function(){
+    $("#old").click(function () {
         $("#oldNewInput").trigger("focus");
     });
 
-    $("#new").click(function(){
+    $("#new").click(function () {
         $("#oldNewInput").triggerHandler("focus");
     });
 
-    $("#oldNewInput").focus(function(){
+    $("#oldNewInput").focus(function () {
         $("<span>Focused!</span>").appendTo("#thId").fadeOut(1000);
     });
 
     // 表单事件
     // .blur()
-    $("#blurId").blur(function(){
+    $("#blurId").blur(function () {
         $("#blurId").val("left Field 1");
     });
 
@@ -137,14 +137,14 @@ $(document).ready(function () {
 
     // .focus()
     $("#focusId input").focus(function () {
-        $(this).next("span").css("display","inline").fadeOut(2000);
+        $(this).next("span").css("display", "inline").fadeOut(2000);
     });
 
     // .focusIn()
     $("#focusInId p").focusin(function () {
-        $(this).find("span").css("display","inline").fadeOut(4000);
+        $(this).find("span").css("display", "inline").fadeOut(4000);
     });
-    
+
     // .select()
     $("#selectId input").select(function () {
         $("#selectId div").text("Something was selected").show().fadeOut(1000);
@@ -152,7 +152,7 @@ $(document).ready(function () {
 
     // .submit()
     $("#submitId form").submit(function () {
-        if($("#submitId input:first").val() == "correct"){
+        if ($("#submitId input:first").val() == "correct") {
             $("#submitId").find("span").text("Validated...").show();
             return true;
         }
@@ -163,7 +163,70 @@ $(document).ready(function () {
 
 
     // 键盘事件
+    // .keydown()
+    $("#target").keydown(function (event) {
+        if (event.which == 13) {
+            event.preventDefault();
+        }
+        var msg = 'key code ' + event.which;
 
+        $("#result").text(msg);
+    });
+
+    $("#other").click(function () {
+        $("#target").keydown();
+    });
+
+    // 鼠标事件
+    // .click()
+    $("#clickId p").click(function () {
+        $(this).slideUp();
+    });
+
+    // .dbclick()
+    $("#dbclickId").dblclick(function () {
+        $(this).css("background", "yellow");
+    });
+
+    // .hover()
+    $("#hoverId li").hover(
+        function () {
+            $(this).append("<span style='color: red;'>***</span>");
+        }, function () {
+            $(this).find("span:last").remove();
+        });
+    
+    // .mouseUp()  .mouseDown()
+    $("#mouseDownId").mouseup(function () {
+        $(this).append('<span style="color:#F00;">Mouse up.</span>');
+    }).mousedown(function () {
+        $(this).append('<span style="color:#00F;">Mouse down.</span>');
+    });
+
+    // .mouseenter() .mouseleaver() .mouseover() .mouseout()
+    var i=0;
+    $("#mouseId div.overout").mouseover(function () {
+        $("#mouseId .overout p:first").text("mouse over");
+        $("#mouseId .overout p:last").text(++i);
+    }).mouseout(function () {
+        $("#mouseId .overout p:first").text("mouse out");
+    });
+
+    var j=0;
+    $("#mouseId div.enterleave").mouseenter(function () {
+        $("#mouseId .enterleave p:first").text("mouse over");
+        $("#mouseId .enterleave p:last").text(++i);
+    }).mouseleave(function () {
+        $("#mouseId .enterleave p:first").text("mouse out");
+    });
+
+    // .mousemove()
+    $("#mouseMoveId div").mousemove(function (e) {
+        var pageCoords = "( " + e.pageX + ", " + e.pageY + " )";
+        var clientCoords = "( " + e.clientX + ", " + e.clientY + " )";
+        $("#mouseMoveId span:first").text("( e.pageX, e.pageY ) : " + pageCoords);
+        $("#mouseMoveId span:last").text("( e.clientX, e.clientY ) : " + clientCoords);
+    });
 
 });
 
@@ -175,7 +238,7 @@ function aClick() {
     $("#show").show().fadeOut("slow");
 }
 
-function update(j){
-    var n = parseInt(j.text(),10);
-    j.text(n+1);
+function update(j) {
+    var n = parseInt(j.text(), 10);
+    j.text(n + 1);
 }

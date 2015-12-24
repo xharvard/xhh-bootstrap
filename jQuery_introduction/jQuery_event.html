@@ -468,6 +468,144 @@
         <h1>事件之 键盘事件</h1>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.keydown( handler(eventObject) )</h4>
+
+            <p>描述: 为 "keydown" 事件绑定一个处理函数，或者触发元素上的 "keydown" 事件。</p>
+            <h4>.keypress( handler(eventObject) )</h4>
+
+            <p>描述: 为 "keypress" 事件绑定一个处理函数，或者触发元素上的 "keypress" 事件。</p>
+            <h4>.keyup( handler(eventObject) )</h4>
+
+            <p>描述: 为 "keyup" 事件绑定一个处理函数，或者触发元素上的 "keyup" 事件。</p>
+        </div>
+        <div class="col-md-8">
+            <form>
+                <fieldset>
+                    <label for="target">Type Something:</label>
+                    <input id="target" type="text"/>
+                </fieldset>
+            </form>
+            <button id="other">
+                Trigger the handler
+            </button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>事件之 鼠标事件</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.click( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的"click" 事件绑定一个处理器，或者触发元素上的 "click" 事件。</p>
+        </div>
+        <div class="col-md-8" id="clickId">
+            <p>First Paragraph</p>
+
+            <p>Second Paragraph</p>
+
+            <p>Yet one more Paragraph</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.dblclick( handler(eventObject) )</h4>
+
+            <p>描述: 为JavaScript 的 "dblclick" 事件绑定一个处理函数，或者触发元素上的 "dblclick" 事件。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="dbclickId"></div>
+            <span>Double click the block</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.hover( handlerIn(eventObject), handlerOut(eventObject) )</h4>
+
+            <p>描述: 将二个事件函数绑定到匹配元素上，分别当鼠标指针进入和离开元素时被执行。</p>
+        </div>
+        <div class="col-md-8" id="hoverId">
+            <ul>
+                <li>Milk</li>
+                <li>Bread</li>
+                <li>Chips</li>
+                <li>Socks</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.mousedown( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "mousedown" 事件绑定一个处理函数，或者触发元素上的该事件。</p>
+            <h4>.mouseup( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "mouseup" 事件绑定一个处理函数，或者触发元素上的该事件。</p>
+        </div>
+        <div class="col-md-8">
+            <p id="mouseDownId">Press mouse and release here.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.mouseenter( handler(eventObject) )</h4>
+
+            <p>描述: 为 mouse enters（鼠标进入） 事件绑定一个处理函数，或者触发元素上的 mouse enters（鼠标进入） 事件。</p>
+            <h4>.mouseleave( handler(eventObject) )</h4>
+
+            <p>描述: 为 mouse leaves（鼠标离开） 事件绑定一个处理函数，或者触发元素上的 mouse leaves（鼠标离开） 事件。</p>
+            <h4>.mouseover( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "mouseover" 事件绑定一个处理函数，或者触发元素上的该事件。（注：支持事件冒泡）</p>
+            <h4>.mouseout( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "mouseout" 事件绑定一个处理函数，或者触发元素上的该事件。（注：支持事件冒泡）</p>
+        </div>
+        <div class="col-md-8" id="mouseId">
+            <div class="out overout"><p>move your mouse</p>
+
+                <div class="in overout"><p>move your mouse</p>
+
+                    <p>0</p>
+                </div>
+                <p>0</p>
+            </div>
+
+            <div class="out enterleave"><p>move your mouse</p>
+
+                <div class="in enterleave"><p>move your mouse</p>
+
+                    <p>0</p>
+                </div>
+                <p>0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.mousemove( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "mousemove" 事件绑定一个处理函数，或者触发元素上的该事件。</p>
+        </div>
+        <div class="col-md-8" id="mouseMoveId">
+            <p>
+                <span>Move the mouse over the div.</span><br>
+                <span>&nbsp;</span>
+            </p>
+
+            <div></div>
+        </div>
+    </div>
 
 
 </div>

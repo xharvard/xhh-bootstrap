@@ -29,3 +29,50 @@ button#theone {
     border: 10px outset;
     cursor: pointer;
 }
+
+#clickId p:hover {
+    background: yellow;
+}
+
+#dbclickId {
+    background: blue;
+    color: white;
+    height: 100px;
+    width: 150px;
+}
+
+div.out {
+    width: 40%;
+    height: 120px;
+    margin: 0 15px;
+    background-color: #D6EDFC;
+    float: left;
+}
+
+div.in {
+    width: 60%;
+    height: 60%;
+    background-color: #FFCC00;
+    margin: 10px auto;
+}
+
+#mouseMoveId div {
+    width: 220px;
+    height: 170px;
+    margin: 10px 50px 10px 10px;
+    background: yellow;
+    border: 2px groove;
+    float: right;
+}
+
+#mouseMoveId p {
+    margin: 0;
+    margin-left: 10px;
+    color: red;
+    width: 280px;
+    height: 120px;
+    padding-top: 70px;
+    float: left;
+    font-size: 14px;
+}
+
