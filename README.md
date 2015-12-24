@@ -30,3 +30,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/21  加入Bootstrap日期和时间选择器。<br>
 2015/12/22  加入jQuery之属性选择器。<br>
 2015/12/23  加入Bootstrap图表。<br>
+2015/12/24  加入jQuery之事件。<br>
