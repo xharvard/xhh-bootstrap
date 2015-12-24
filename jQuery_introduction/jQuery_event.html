@@ -128,6 +128,15 @@
             <small style="color:red">从jQuery 1.7开始，.on() 方法是将事件处理程序绑定到文档（document）的首选方法</small>
             <br>
             <kbd>$("#bindId").bind("click",function(){})</kbd>
+            <br>
+            <br>
+            <br>
+            <h4>.unbind( [eventType ] [, handler(eventObject) ] )</h4>
+
+            <p>描述: 从元素上删除一个以前附加事件处理程序。</p>
+            <kbd>$("#bindId").unbind("click")</kbd>
+            <br>
+            <small style="color:red;">从 jQuery 1.7开始， .on() 和 .off()方法是最好的元素上附加和移除事件处理程序的方法。</small>
         </div>
         <div class="col-md-8">
             <p id="bindId">Click or double click here.</p>
@@ -138,6 +147,15 @@
             <p id="customBindId">Has an attached custom event.</p>
             <button id="customBindBtn">Trigger custom event</button>
             <span id="customBindSpan" style="display:none;"></span>
+
+            <br>
+            <br>
+            <br>
+            <button id="theone1">Does nothing...</button>
+            <button id="bind1">Bind Click</button>
+            <button id="unbind1">Unbind Click</button>
+            <div id="show1" style="display:none;">Click!</div>
+
         </div>
     </div>
 
@@ -152,6 +170,11 @@
             <kbd>$( elements ).delegate( selector, events, data, handler );(jQuery 1.4.3+)</kbd>
             <br>
             <kbd>$( elements ).on( events, selector, data, handler );(jQuery 1.7+)</kbd>
+            <br>
+            <h4>.undelegate( selector, eventType, handler(eventObject) )</h4>
+
+            <p>描述: 删除当前选择器匹配的所有元素的事件处理程序，根据一组特定根元素的集合</p>
+            <small style="color:red;">从 jQuery 1.7开始， .on() 和 .off()方法是最好的元素上附加和移除事件处理程序的方法。</small>
         </div>
         <div class="col-md-8" id="delegateId">
             <p>click me</p>
@@ -268,9 +291,184 @@
             <br>
             <br>
             <br>
+
             <p>Click a green square...</p>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.trigger( eventType [, extraParameters ] )</h4>
+
+            <p>描述: 根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。</p>
+        </div>
+        <div class="col-md-8" id="triggerId">
+            <button>Button #1</button>
+            <button>Button #2</button>
+            <div><span>0</span> button #1 clicks.</div>
+            <div><span>0</span> button #2 clicks.</div>
+
+            <pre>
+                Example: 向事件中传入任意的数据：
+                $("p").click( function (event, a, b) {
+                // when a normal click fires, a and b are undefined
+                // for a trigger like below a refers to "foo" and b refers to "bar"
+                } ).trigger("click", ["foo", "bar"]);
+            </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.triggerHandler( eventType [, extraParameters ] )</h4>
+
+            <p>描述: 为一个事件执行附加到元素的所有处理程序。</p>
+        </div>
+        <div class="col-md-8" id="thId">
+            <div class="well">
+                .triggerHandler() 方法的行为与 .trigger() 相似，不同之处有如下几点：
+                <ul>
+                    <li>
+                        .triggerHandler() 方法并不会触发事件的默认行为。(例如，表单提交)。
+                    </li>
+                    <li>
+                        .trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素。
+                    </li>
+                    <li>
+                        使用 .triggerHandler() 创建的事件，并不会在 DOM 树中向上冒泡。如果事件没有被目标元素直接处理，那么它就不会进行任何处理。
+                    </li>
+                    <li>
+                        与普通的方法返回 jQuery 对象(这样就能够使用链式用法)相反，.triggerHandler() 返回最后一个处理的事件的返回值。如果没有触发任何事件，会返回 undefined。
+                    </li>
+                </ul>
+            </div>
+
+            <button id="old">.trigger("focus")</button>
+            <button id="new">.triggerHandler("focus")</button>
+            <br/><br/>
+            <input id="oldNewInput" type="text" value="To Be Focused"/>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>事件之 表单事件</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.change( handler(eventObject) )</h4>
+
+            <p>描述: 为JavaScript 的 "change" 事件绑定一个处理函数，或者触发元素上的 "change" 事件。</p>
+        </div>
+        <div class="col-md-8">
+            <select id="changeId" name="sweets" multiple="multiple">
+                <option>Chocolate</option>
+                <option selected="selected">Candy</option>
+                <option>Taffy</option>
+                <option selected="selected">Caramel</option>
+                <option>Fudge</option>
+                <option>Cookie</option>
+            </select>
+
+            <div id="changeDivId"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.blur( handler(eventObject) )</h4>
+
+            <p>描述: 为 "blur" 事件绑定一个处理函数，或者触发元素上的 "blur" 事件（注：此事件不支持冒泡）。</p>
+        </div>
+        <div class="col-md-8">
+            <input id="blurId" type="text" value="Field 1"/>
+            <input type="text" value="Field 2"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.focus( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "focus" 事件绑定一个处理函数，或者触发元素上的 "focus" 事件。</p>
+        </div>
+        <div class="col-md-8" id="focusId">
+            <p><input type="text"/> <span style="display: none;">focus fire</span></p>
+
+            <p><input type="password"/> <span style="display: none;">focus fire</span></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.focusin( handler(eventObject) )</h4>
+
+            <p>描述: 将一个事件函数绑定到"focusin" 事件。</p>
+            <small style="color:red;">focusin 事件会在元素（或者其内部的任何元素）获得焦点时触发。这跟 focus 事件的显著区别在于，
+                它可以在父元素上检测子元素获得焦点的情况(换而言之，它支持事件冒泡)。
+            </small>
+            <br>
+            <h4>.focusout( handler(eventObject) )</h4>
+
+            <p>描述: 将一个事件函数绑定到"focusout" 事件。</p>
+            <small style="color:red;">focusout 事件会在元素（或者其内部的任何元素）失去焦点时触发。这跟 blur 事件的显著区别在于，
+                它可以在父元素上检测子元素失去焦点的情况(换而言之，它支持事件冒泡)。
+            </small>
+            <br>
+        </div>
+        <div class="col-md-8" id="focusInId">
+            <p><input type="text"/> <span style="display: none;">focus fire</span></p>
+
+            <p><input type="password"/> <span style="display: none;">focus fire</span></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.select( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "select" 事件绑定一个处理函数，或者触发元素上的该事件。</p>
+            <small>当用户在一个元素中进行文本选择时，这个元素上的select事件就会被触发。
+                此事件只能用在&lt;input type="text"&gt; 和&lt;textarea&gt;。
+            </small>
+        </div>
+        <div class="col-md-8" id="selectId">
+            <p>
+                Click and drag the mouse to select text in the inputs.
+            </p>
+            <input type="text" value="Some text"/>
+            <input type="text" value="to test on"/>
+
+            <div></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.submit( handler(eventObject) )</h4>
+
+            <p>描述: 为 JavaScript 的 "submit" 事件绑定一个处理函数，或者触发元素上的该事件。</p>
+            <small>它只能绑定在&lt;form&gt;元素上</small>
+        </div>
+        <div class="col-md-8" id="submitId">
+            <p>Type 'correct' to validate.</p>
+
+            <form action="javascript:alert('success!');">
+                <div>
+                    <input type="text"/>
+
+                    <input type="submit"/>
+                </div>
+            </form>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>事件之 键盘事件</h1>
+    </div>
+
+
 
 </div>
 </body>
