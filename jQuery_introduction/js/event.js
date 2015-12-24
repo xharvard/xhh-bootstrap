@@ -214,10 +214,10 @@ $(document).ready(function () {
 
     var j=0;
     $("#mouseId div.enterleave").mouseenter(function () {
-        $("#mouseId .enterleave p:first").text("mouse over");
+        $("#mouseId .enterleave p:first").text("mouse enter");
         $("#mouseId .enterleave p:last").text(++i);
     }).mouseleave(function () {
-        $("#mouseId .enterleave p:first").text("mouse out");
+        $("#mouseId .enterleave p:first").text("mouse leave");
     });
 
     // .mousemove()
