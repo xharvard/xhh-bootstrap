@@ -33,3 +33,29 @@ div#two {
 div#three {
     background: #00f;
 }
+
+#slideId div {
+    background: #cfd;
+    margin: 3px;
+    width: 50px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    border: 2px outset black;
+    font-weight: bolder;
+}
+
+#slideId input {
+    display: none;
+    width: 120px;
+    float: left;
+    margin: 10px;
+}
+
+#slideUpId div {
+    background: #3d9a44;
+    margin: 3px;
+    width: 80px;
+    height: 40px;
+    float: left;
+}

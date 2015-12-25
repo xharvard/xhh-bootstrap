@@ -135,14 +135,55 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h4></h4>
+            <h4>.slideDown( [duration ] [, complete ] )</h4>
 
-            <p>描述: </p>
+            <p>描述: 用滑动动画显示一个匹配元素。 </p>
 
-            <kbd></kbd>
+            <kbd>$('.target').slideDown("fast")</kbd>
+
+            <h4>.slideUp( [duration ] [, complete ] )</h4>
+
+            <p>描述: 用滑动动画隐藏一个匹配元素。</p>
+
+            <kbd>$('.target').slideUp("fast")</kbd>
+
+            <h4>.slideToggle( [duration ] [, complete ] )</h4>
+
+            <p>描述: 用滑动动画显示或隐藏一个匹配元素。</p>
+
+            <kbd>$('.target').slideToggle("fast")</kbd>
         </div>
         <div class="col-md-8">
+            <div id="slideId">
+                <div>Push!</div>
+                <input type="text" />
+                <input type="text" class="middle" />
 
+                <input type="text" />
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div id="slideUpId">
+                <p>Click me!</p>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div id="slideToggleId">
+                <button>Toggle</button>
+
+                <p>
+                    This is the paragraph to end all paragraphs.  You
+                    should feel <em>lucky</em> to have seen such a paragraph in
+                    your life.  Congratulations!
+                </p>
+            </div>
         </div>
     </div>
 

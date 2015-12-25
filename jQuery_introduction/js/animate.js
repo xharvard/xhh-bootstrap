@@ -44,16 +44,31 @@ $(document).ready(function () {
     });
 
     $("#fadeId p:last").click(function () {
-        $(this).fadeTo("slow",0.33);
+        $(this).fadeTo("slow", 0.33);
     });
 
     $("#fadeId button").click(function () {
-        $(this).next().fadeToggle(2000,"linear");
+        $(this).next().fadeToggle(2000, "linear");
     });
 
     // 滑动
     // .slideDown()  .slideUp()  .slideToggle()
+    $("#slideId div").click(function () {
+        $(this).css({borderStyle: "inset", cursor: "wait"});
+        $("#slideId input").slideDown(2000, function () {
+            $(this).css("border", "2px red inset").filter(".middle").css("background", "yellow").focus();
+            $("#slideId div").css("visibility", "hidden");
+        });
+    });
     
+    $("#slideUpId p").click(function () {
+        $("#slideUpId div").slideUp(2000);
+    });
+
+    $("#slideToggleId button").click(function(){
+        $("#slideToggleId p").slideToggle(3000);
+    });
+
 });
 
 function doIt() {
