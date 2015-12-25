@@ -32,6 +32,28 @@ $(document).ready(function () {
         $("#toggleId p").toggle("slow");
     });
 
+
+    // 渐变
+    // .fadeIn()  .fadeOut()  .fadeTo()  .fadeToggle()
+    $("#fadeId span").click(function () {
+        $("#fadeId div:hidden:first").fadeIn("slow");
+    });
+
+    $("#fadeId p:first").click(function () {
+        $(this).fadeOut(3000);
+    });
+
+    $("#fadeId p:last").click(function () {
+        $(this).fadeTo("slow",0.33);
+    });
+
+    $("#fadeId button").click(function () {
+        $(this).next().fadeToggle(2000,"linear");
+    });
+
+    // 滑动
+    // .slideDown()  .slideUp()  .slideToggle()
+    
 });
 
 function doIt() {

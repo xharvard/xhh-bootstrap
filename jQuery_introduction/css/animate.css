@@ -13,3 +13,23 @@
 #pId {
     display: none;
 }
+
+#fadeId div {
+    margin: 3px;
+    width: 80px;
+    display: none;
+    height: 80px;
+    float: left;
+}
+
+div#one {
+    background: #f00;
+}
+
+div#two {
+    background: #0f0;
+}
+
+div#three {
+    background: #00f;
+}

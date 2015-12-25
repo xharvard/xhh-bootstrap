@@ -73,17 +73,64 @@
         </div>
     </div>
 
+    <div class="page-header">
+        <h1>特效之 渐变</h1>
+    </div>
+
     <div class="row">
         <div class="col-md-4">
-            <h4></h4>
+            <h4>.fadeIn( [duration ] [, complete ] )</h4>
 
-            <p>描述: </p>
+            <p>描述: 通过淡入的方式显示匹配元素。</p>
+            <small style="color:red;">.fadeIn()方法通过匹配元素的不透明度做动画效果。</small>
+            <br>
+            <kbd>$('.target').fadeIn("slow")</kbd>
 
-            <kbd></kbd>
+            <h4>.fadeOut( [duration ] [, complete ] )</h4>
+
+            <p>描述: 通过淡出的方式隐藏匹配元素。</p>
+            <kbd>$('.target').fadeOut("fast")</kbd>
+
+            <h4>.fadeTo( duration, opacity [, complete ] )</h4>
+
+            <p>描述: 调整匹配元素的透明度。</p>
+            <kbd>$('.target').fadeTo("fast"，0.6)</kbd>
+
+            <h4>.fadeToggle( [duration ] [, easing ] [, complete ] )</h4>
+
+            <p>描述: 通过匹配的元素的不透明度动画，来显示或隐藏它们。</p>
+            <kbd>$('.target').fadeToggle("fast")</kbd>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" id="fadeId">
+            <span>点我出现方块...</span>
 
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <p>
+                点我消失...
+            </p>
+            <br>
+            <br>
+            <hr>
+            <p style="color:red;">
+                点我颜色将变淡...
+            </p>
+            <br>
+            <br>
+            <hr>
+            <button>点我出现或影藏后面的内容</button><span>我根据按钮变化透明度</span>
         </div>
+    </div>
+
+    <div class="page-header">
+        <h1>特效之 滑动</h1>
     </div>
 
     <div class="row">
@@ -98,136 +145,6 @@
 
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h4></h4>
-
-            <p>描述: </p>
-
-            <kbd></kbd>
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
-
 
 </div>
 </body>
