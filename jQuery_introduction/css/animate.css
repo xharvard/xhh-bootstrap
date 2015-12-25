@@ -1,0 +1,15 @@
+.row {
+    margin-top: 10px;
+    border-top: dashed crimson 1px;
+    padding: 10px;
+}
+
+#hideId span {
+    background: #def3ca;
+    padding: 3px;
+    float: left;
+}
+
+#pId {
+    display: none;
+}
