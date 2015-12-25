@@ -32,6 +32,9 @@ $(document).ready(function () {
         $("#toggleId p").toggle("slow");
     });
 
+    // 自定义
+
+
 
     // 渐变
     // .fadeIn()  .fadeOut()  .fadeTo()  .fadeToggle()
