@@ -66,6 +66,7 @@
             <div id="toggleId">
                 <button>Toggle 'em</button>
                 <p>Hiya</p>
+
                 <p>Such interesting text, eh?</p>
             </div>
         </div>
@@ -82,9 +83,73 @@
             <p>描述: 根据一组 CSS 属性，执行自定义动画。</p>
         </div>
         <div class="col-md-8">
+            <button id="go">&raquo; Run</button>
+            <div id="block">Hello!</div>
 
+            <br>
+            <button id="left">&laquo;</button>
+            <button id="right">&raquo;</button>
+            <div class="block"></div>
         </div>
     </div>
+
+    <div class="row" style="margin-top: 100px;">
+        <div class="col-md-4">
+            <h4>.delay( duration [, queueName ] )</h4>
+
+            <p>描述: 设置一个延时来推迟执行队列中后续的项。</p>
+        </div>
+        <div class="col-md-8">
+            <p>
+                <button id="run">Run</button>
+                第一个方块延迟显示
+            </p>
+
+            <div class="first"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.dequeue( [queueName ] )</h4>
+
+            <p>描述: 执行匹配元素队列的下一个函数。</p>
+            <small>当.dequeue()被调用的时候，列队中的下一个函数将从这个列队中被移除，然后再执行。
+                这个执行的函数中也应当直接或间接的包含 .dequeue()语句，这样才能继续执行队列中的其它函数，所以,这个序列可以继续。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <button id="start">Start</button>
+            <div class="dequeueDiv"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.queue( [queueName ] )</h4>
+
+            <p>描述: 显示在匹配的元素上的已经执行的函数列队。</p>
+        </div>
+        <div class="col-md-8">
+            <P id="queueId">  Click here...</P>
+            <div id="queueDiv"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.finish( [queue ] )</h4>
+
+            <p>描述: 停止当前正在运行的动画，删除所有排队的动画，并完成匹配元素所有的动画。</p>
+        </div>
+        <div class="col-md-8">
+           
+        </div>
+    </div>
+
 
 
     <div class="page-header">
@@ -139,7 +204,8 @@
             <br>
             <br>
             <hr>
-            <button>点我出现或影藏后面的内容</button><span>我根据按钮变化透明度</span>
+            <button>点我出现或影藏后面的内容</button>
+            <span>我根据按钮变化透明度</span>
         </div>
     </div>
 
@@ -170,16 +236,17 @@
         <div class="col-md-8">
             <div id="slideId">
                 <div>Push!</div>
-                <input type="text" />
-                <input type="text" class="middle" />
+                <input type="text"/>
+                <input type="text" class="middle"/>
 
-                <input type="text" />
+                <input type="text"/>
             </div>
             <br>
             <br>
             <hr>
             <div id="slideUpId">
                 <p>Click me!</p>
+
                 <div></div>
                 <div></div>
                 <div></div>
@@ -193,9 +260,9 @@
                 <button>Toggle</button>
 
                 <p>
-                    This is the paragraph to end all paragraphs.  You
+                    This is the paragraph to end all paragraphs. You
                     should feel <em>lucky</em> to have seen such a paragraph in
-                    your life.  Congratulations!
+                    your life. Congratulations!
                 </p>
             </div>
         </div>

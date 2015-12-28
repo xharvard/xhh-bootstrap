@@ -33,6 +33,73 @@ $(document).ready(function () {
     });
 
     // 自定义
+    // .animate()
+    $("#go").click(function () {
+        $("#block").animate({
+            width:"70%",
+            opacity:.4,
+            marginLeft:"0.6in",
+            fontSize:"2em",
+            borderWidth:"10px"
+        },2000);
+    });
+    
+    $("#right").click(function () {
+        $(".block").animate({
+            left:"+=50px"
+        },"slow");
+    });
+
+    $("#left").click(function () {
+        $(".block").animate({
+            left:"-=50px"
+        },"slow");
+    });
+
+    // .delay()
+    $("#run").click(function () {
+        $(".first").slideUp(300).delay(800).slideDown(400);
+        $(".second").slideUp(300).slideDown(400);
+    });
+
+    // .dequeue()
+    $("#start").click(function () {
+        $(".dequeueDiv").animate({
+            left:"+=200px"
+        },2000);
+        $(".dequeueDiv").animate({
+            top:"0px"
+        },600);
+        $(".dequeueDiv").queue(function () {
+           $(this).toggleClass("redDiv");
+            //$(this).dequeue();
+        });
+        $(".dequeueDiv").animate({
+            left:"10px",
+            top:"30px"
+        },700);
+    });
+    
+    // .queue()
+    $("#queueId").click(function () {
+        var div = $("#queueDiv");
+        div.show("slow");
+        div.animate({
+            left:"+=200px"
+        },2000);
+        div.queue(function () {
+            $(this).addClass("newColor");
+            $(this).dequeue();
+        });
+        div.animate({
+            "left":"-=200px"
+        },500);
+        div.queue(function () {
+            $(this).removeClass("newColor");
+            $(this).dequeue();
+        });
+        div.slideUp();
+    });
 
 
 

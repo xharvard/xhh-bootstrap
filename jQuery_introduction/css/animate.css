@@ -59,3 +59,65 @@ div#three {
     height: 40px;
     float: left;
 }
+
+#block {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+}
+
+.block {
+    position: absolute;
+    background-color: #abc;
+    left: 50px;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+}
+
+.first {
+    background-color: #3f3;
+    left: 0;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+
+.second {
+    background-color: #33f;
+    left: 80px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+
+.dequeueDiv {
+    margin: 3px;
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    left: 10px;
+    top: 30px;
+    background-color: yellow;
+}
+
+.redDiv {
+    background-color: red;
+}
+
+#queueDiv {
+    margin: 3px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background: green;
+    display: none;
+}
+
+.newColor {
+    background: blue;
+}
