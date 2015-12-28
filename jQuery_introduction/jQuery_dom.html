@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery DOM操作</title>
+
+    <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dom.css" rel="stylesheet">
+
+    <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/dom.js"></script>
+</head>
+<body>
+
+<!-- DOM操作 -->
+<div class="container">
+    <div class="page-header">
+        <h1>DOM之 class属性</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.addClass( className )</h4>
+
+            <p>描述: 为每个匹配的元素添加指定的样式类名</p>
+        </div>
+        <div class="col-md-8">
+            <div id="addClassId">
+                <p>Hello</p>
+
+                <p>and</p>
+
+                <p>Goodbye</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.hasClass( className )</h4>
+
+            <p>描述: 确定任何一个匹配元素是否有被分配给定的（样式）类。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="hasClassId">
+                <p>This paragraph is black and is the first paragraph.</p>
+
+                <p class="selected">This paragraph is red and is the second paragraph.</p>
+            </div>
+            <div id="result1">First paragraph has selected class:</div>
+            <div id="result2">Second paragraph has selected class:</div>
+            <div id="result3">At least one paragraph has selected class:</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.removeClass( [className ] )</h4>
+
+            <p>描述: 移除集合中每个匹配元素上一个，多个或全部样式。</p>
+            <small>这个方法通常和 .addClass() 一起使用用来切换元素的样式, 像这样：
+                $('p').removeClass('myClass noClass').addClass('yourClass');
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="removeClassId">
+                <p class="blue under">Hello</p>
+
+                <p class="blue under highlight">and</p>
+
+                <p class="blue under">then</p>
+
+                <p class="blue under">Goodbye</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.toggleClass( className )</h4>
+
+            <p>描述: 在匹配的元素集合中的每个元素上添加或删除一个或多个样式类,取决于这个样式类是否存在或值切换属性。
+                即：如果存在（不存在）就删除（添加）一个类。</p>
+            <small>这个方法通常和 .addClass() 一起使用用来切换元素的样式, 像这样：
+                $('p').removeClass('myClass noClass').addClass('yourClass');
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="toggleClassId">
+                <p class="blue">Click to toggle</p>
+
+                <p class="blue highlight">highlight</p>
+
+                <p class="blue">on these</p>
+
+                <p class="blue">paragraphs</p>
+            </div>
+
+            <div id="toggleClassId2">
+                <p>每当第三次点击段落的时候添加 "highlight" 样式类, 第一次和第二次点击的时候移除 "highlight" 样式类</p>
+
+                <p class="blue">Click to toggle (<span>clicks: 0</span>)</p>
+
+                <p class="blue highlight">highlight (<span>clicks: 0</span>)</p>
+
+                <p class="blue">on these (<span>clicks: 0</span>)</p>
+
+                <p class="blue">paragraphs (<span>clicks: 0</span>)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 复制元素</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.clone( [withDataAndEvents ] )</h4>
+
+            <p>描述: 创建一个匹配的元素集合的深度拷贝副本。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="cloneId">
+                <b>Hello</b>
+
+                <p>, how are you?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 插入并包裹现有内容</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.unwrap()</h4>
+
+            <p>描述: 将匹配元素集合的父级元素删除，保留自身（和兄弟元素，如果存在）在原来的位置。</p>
+            <small>.unwrap()删除元素的父级元素。和 .wrap()的功能相反。
+                匹配的元素（以及他们的兄弟元素，如果有的话）取代他们的父母在DOM结构。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="unwrapId">
+                <button>unwrap</button>
+                <p>Hello</p>
+
+                <p>cruel</p>
+
+                <p>World</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.wrap( wrappingElement )</h4>
+
+            <p>描述: 在每个匹配的元素外层包上一个html元素。</p>
+            <small>.wrap()函数可以接受任何字符串或对象，可以传递给$()工厂函数来指定一个DOM结构。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="wrapId">
+                <p>Hello</p>
+
+                <p>cruel</p>
+
+                <p>World</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.wrapAll( wrappingElement )</h4>
+
+            <p>描述: 在所有匹配元素外面包一层HTML结构。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="wrapAllId">
+                <p style="background:yellow; margin:4px; ">Hello</p>
+
+                <p style="background:yellow; margin:4px; ">cruel</p>
+
+                <p style="background:yellow; margin:4px; ">World</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.wrapInner( wrappingElement )</h4>
+
+            <p>描述: 在匹配元素里的内容外包一层结构。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="wrapInnerId">
+                <p>Hello</p>
+
+                <p>cruel</p>
+
+                <p>World</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 插入现有元素内</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.append( content [, content ] )</h4>
+
+            <p>描述: 在每个匹配元素里面的末尾处插入参数内容。</p>
+            <small>.append() 和.appendTo()实现同样的功能。主要的不同是语法——内容和目标的位置不同。
+                对于.append(), 选择器表达式在函数的前面，参数是将要插入的内容。对于.appendTo()刚好相反，内容在方法前面，
+                无论是一个选择器表达式 或创建作为标记上的标记，它都将被插入到目标容器的末尾。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="appendId">
+                <p>I would like to say: </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.appendTo( target )</h4>
+
+            <p>描述: 将匹配的元素插入到目标元素的最后面（译者注：内部插入）。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="appendToId">
+                <span>I have nothing more to say... </span>
+
+                <div id="foo">FOO!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.html()</h4>
+
+            <p>描述: 获取集合中第一个匹配元素的HTML内容</p>
+            <h4>.html( htmlString )</h4>
+
+            <p>描述: 设置每一个匹配元素的html内容。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="htmlId">
+                <p>
+                    <b>Click</b> to change the <span id="tag">html</span>
+                </p>
+            </div>
+            <div id="htmlId2">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.prepend( content [, content ] )</h4>
+
+            <p>描述: 将参数内容插入到每个匹配元素的前面（元素内部）。</p>
+            <small>.prepend()和.prependTo()实现同样的功能，主要的不同是语法，插入的内容和目标的位置不同。
+                对于 .prepend() 而言，选择器表达式写在方法的前面，作为待插入内容的容器，将要被插入的内容作为方法的参数。
+                而 .prependTo() 正好相反，将要被插入的内容写在方法的前面，可以是选择器表达式或动态创建的标记，待插入内容的容器作为参数。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="prependId">
+                <p>there, friend!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.prependTo( target )</h4>
+
+            <p>描述: 将所有元素插入到目标前面（元素内）。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="prependToId">
+                <div id="foo2">FOO!</div>
+                <span>I have something to say... </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.text()</h4>
+
+            <p>描述: 得到匹配元素集合中每个元素的合并文本，包括他们的后代</p>
+            <small>和 .html() 方法不同， .text() 在XML 和 HTML 文档中都能使用。.text() 方法返回一个字符串，包含所有匹配元素的合并文本。</small>
+            <br>
+            <small>.text() 方法不能使用在 input 元素或scripts元素上。 input 或 textarea 需要使用 .val() 方法获取或设置文本值。
+                得到scripts元素的值，使用.html()方法
+            </small>
+            <h4>.text( htmlString )</h4>
+
+            <p>描述: 设置匹配元素集合中每个元素的文本内容为指定的文本内容。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="textId">
+                <p><b>Test</b> Paragraph.</p>
+            </div>
+            <div id="textId2">
+                <p>Test Paragraph.</p>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 插入现有元素外</h1>
+    </div>
+
+
+</div>
+</body>
+</html>

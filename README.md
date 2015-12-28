@@ -18,7 +18,7 @@ Node.js中文网:http://nodejs.cn/<br>
 图表:http://www.bootcss.com/p/chart.js/<br>
          
 
-进度：<br>
+##进度：
 2015/12/11  加入JS插件之模态框。<br>
 2015/12/14  加入全局 CSS 样式的栅格系统，排版，代码，表格，表单。<br>
 2015/12/15  加入全局 CSS 样式的按钮，图片，辅助类。<br>
@@ -32,3 +32,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/23  加入Bootstrap图表。<br>
 2015/12/24  加入jQuery之事件。<br>
 2015/12/25  加入jQuery之特效。<br>
+2015/12/28  加入jQuery之DOM操作。<br>
