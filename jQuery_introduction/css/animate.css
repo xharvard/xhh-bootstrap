@@ -119,5 +119,47 @@ div#three {
 }
 
 .newColor {
-    background: blue;
+    border: 2px solid red;
+}
+
+
+.newClearDIvColor {
+    border: 2px solid red;
+}
+
+#intervalDiv {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    background: green;
+}
+
+.offDiv {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    background: green;
+}
+
+.block1 {
+    position: absolute;
+    background-color: #abc;
+    left: 0px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+#clearDiv {
+    margin: 3px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background: green;
+    display: none;
 }

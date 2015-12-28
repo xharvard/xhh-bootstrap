@@ -36,24 +36,24 @@ $(document).ready(function () {
     // .animate()
     $("#go").click(function () {
         $("#block").animate({
-            width:"70%",
-            opacity:.4,
-            marginLeft:"0.6in",
-            fontSize:"2em",
-            borderWidth:"10px"
-        },2000);
+            width: "70%",
+            opacity: .4,
+            marginLeft: "0.6in",
+            fontSize: "2em",
+            borderWidth: "10px"
+        }, 2000);
     });
-    
+
     $("#right").click(function () {
         $(".block").animate({
-            left:"+=50px"
-        },"slow");
+            left: "+=50px"
+        }, "slow");
     });
 
     $("#left").click(function () {
         $(".block").animate({
-            left:"-=50px"
-        },"slow");
+            left: "-=50px"
+        }, "slow");
     });
 
     // .delay()
@@ -65,35 +65,35 @@ $(document).ready(function () {
     // .dequeue()
     $("#start").click(function () {
         $(".dequeueDiv").animate({
-            left:"+=200px"
-        },2000);
+            left: "+=200px"
+        }, 2000);
         $(".dequeueDiv").animate({
-            top:"0px"
-        },600);
+            top: "0px"
+        }, 600);
         $(".dequeueDiv").queue(function () {
-           $(this).toggleClass("redDiv");
-            //$(this).dequeue();
+            $(this).toggleClass("redDiv");
+            $(this).dequeue();
         });
         $(".dequeueDiv").animate({
-            left:"10px",
-            top:"30px"
-        },700);
+            left: "10px",
+            top: "30px"
+        }, 700);
     });
-    
+
     // .queue()
     $("#queueId").click(function () {
         var div = $("#queueDiv");
         div.show("slow");
         div.animate({
-            left:"+=200px"
-        },2000);
+            left: "+=200px"
+        }, 2000);
         div.queue(function () {
             $(this).addClass("newColor");
             $(this).dequeue();
         });
         div.animate({
-            "left":"-=200px"
-        },500);
+            "left": "-=200px"
+        }, 500);
         div.queue(function () {
             $(this).removeClass("newColor");
             $(this).dequeue();
@@ -101,6 +101,63 @@ $(document).ready(function () {
         div.slideUp();
     });
 
+    // jQuery.fx.interval
+    jQuery.fx.interval = 100;
+    $("#intervalId").click(function () {
+        $("#intervalDiv").toggle(3000);
+    });
+
+    // jQuery.fx.off
+    var toggleFx = function () {
+        $.fx.off = !$.fx.off;
+    };
+
+    $("#offBtnId").click(toggleFx);
+    $("#offId").click(function () {
+        $(".offDiv").toggle("slow");
+    });
+
+    // .stop()
+    $("#go1").click(function () {
+        $(".block1").animate({left: '+=100px'}, 2000);
+    });
+
+    $("#stop").click(function () {
+        $(".block1").stop();
+    });
+
+    $("#back").click(function () {
+        $(".block1").animate({left: '-=100px'}, 2000);
+    });
+
+    // .clearQueue()
+    $("#start1").click(function () {
+        var myDiv = $("#clearDiv");
+        myDiv.show("slow");
+        myDiv.animate({
+            left: "+=200px"
+        }, 5000);
+
+        myDiv.queue(function () {
+            var _this = $(this);
+            _this.addClass("newClearDIvColor");
+            _this.dequeue();
+        });
+
+        myDiv.animate({left: '-=200'}, 1500);
+        myDiv.queue(function () {
+            var _this = $(this);
+            _this.removeClass("newClearDIvColor");
+            _this.dequeue();
+        });
+        myDiv.slideUp();
+    });
+
+    $("#clear").click(function () {
+        var myDiv = $("#clearDiv");
+        myDiv.clearQueue();
+        myDiv.stop();
+    });
 
 
     // 渐变
@@ -130,12 +187,12 @@ $(document).ready(function () {
             $("#slideId div").css("visibility", "hidden");
         });
     });
-    
+
     $("#slideUpId p").click(function () {
         $("#slideUpId div").slideUp(2000);
     });
 
-    $("#slideToggleId button").click(function(){
+    $("#slideToggleId button").click(function () {
         $("#slideToggleId p").slideToggle(3000);
     });
 

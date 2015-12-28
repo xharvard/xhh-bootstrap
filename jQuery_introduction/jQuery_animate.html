@@ -112,6 +112,7 @@
 
     <br>
     <br>
+
     <div class="row">
         <div class="col-md-4">
             <h4>.dequeue( [queueName ] )</h4>
@@ -134,25 +135,77 @@
             <p>描述: 显示在匹配的元素上的已经执行的函数列队。</p>
         </div>
         <div class="col-md-8">
-            <P id="queueId">  Click here...</P>
+            <P id="queueId"> Click here...</P>
+
             <div id="queueDiv"></div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h4>.finish( [queue ] )</h4>
+            <h4>jQuery.fx.interval</h4>
 
-            <p>描述: 停止当前正在运行的动画，删除所有排队的动画，并完成匹配元素所有的动画。</p>
+            <p>描述: 该动画的频率（以毫秒为单位）。</p>
+            <small>这个属性可以设置动画每秒运行帧数。默认是13毫秒。</small>
         </div>
         <div class="col-md-8">
-           
+            <p><input id="intervalId" type="button" value="Run"/></p>
+
+            <div id="intervalDiv"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>jQuery.fx.off</h4>
+
+            <p>描述: 全局的禁用所有动画。</p>
+            <small>当这个属性设置为true的时候，调用时所有动画方法将立即设置元素为他们的最终状态，而不是显示效果</small>
+        </div>
+        <div class="col-md-8">
+            <p><input id="offId" type="button" value="Run"/>
+                <button id="offBtnId">Toggle fx</button>
+            </p>
+            <div class="offDiv"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.stop( [clearQueue ] [, jumpToEnd ] )</h4>
+
+            <p>描述: 停止匹配元素当前正在运行的动画。</p>
+            <small>当一个元素调用.stop()，当前正在运行的动画（如果有的话）立即停止。</small>
+        </div>
+        <div class="col-md-8">
+            <button id="go1">Go</button>
+            <button id="stop">STOP!</button>
+            <button id="back">Back</button>
+            <div class="block1"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.clearQueue( [queueName ] )</h4>
+
+            <p>描述: 从列队中移除所有未执行的项。</p>
+            <small>当.clearQueue()方法被访问的时候，所有在这个列队中未执行的函数将被移除
+                。当不使用参数的时候，.clearQueue()会从标准的动画队列fx中移除剩下的函数。
+                这个方法类似.stop(true)。然而.stop()方法只适用在动画中。
+                clearQueue()还可以用来移除用.queue()方法添加到普通jQuery列表的任何函数
+            </small>
+        </div>
+        <div class="col-md-8">
+            <button id="start1">Start</button>
+            <button id="clear">clear</button>
+            <div id="clearDiv"></div>
         </div>
     </div>
 
 
-
-    <div class="page-header">
+    <div class=" page-header
+            ">
         <h1>特效之 渐变</h1>
     </div>
 
