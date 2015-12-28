@@ -122,7 +122,6 @@ div#three {
     border: 2px solid red;
 }
 
-
 .newClearDIvColor {
     border: 2px solid red;
 }
@@ -162,4 +161,28 @@ div#three {
     top: 30px;
     background: green;
     display: none;
+}
+
+.box {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 15px;
+    height: 15px;
+    background: black;
+}
+
+#path {
+    height: 284px;
+    font-size: 80%;
+    border-left: 2px dashed red;
+    border-bottom: 2px dashed green;
+    border-right: 2px dashed blue;
+}
+
+#path button {
+    width: 12em;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
 }

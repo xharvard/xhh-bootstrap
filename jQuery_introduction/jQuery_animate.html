@@ -203,6 +203,36 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.finish( [queue ] )</h4>
+
+            <p>描述: 停止当前正在运行的动画，删除所有排队的动画，并完成匹配元素所有的动画。</p>
+            <small>当.finish()在一个元素上被调用，立即停止当前正在运行的动画和所有排队的动画（如果有的话），
+                并且他们的CSS属性设置为它们的目标值（注：就是所有动画的目标值）。所有排队的动画将被删除。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div class="box"></div>
+            <div id="path">
+                <button id="go2">Go</button>
+                <br>
+                <button id="bstt" class="b">.stop(true,true)</button>
+                <button id="bcf" class="b">.clearQueue().finish()</button>
+                <br>
+                <button id="bstf" class="b">.stop(true, false)</button>
+                <button id="bcs" class="b">.clearQueue().stop()</button>
+                <br>
+                <button id="bsff" class="b">.stop(false, false)</button>
+                <button id="bs" class="b">.stop()</button>
+                <br>
+                <button id="bsft" class="b">.stop(false, true)</button>
+                <br>
+                <button id="bf" class="b">.finish()</button>
+            </div>
+        </div>
+    </div>
+
 
     <div class=" page-header
             ">
