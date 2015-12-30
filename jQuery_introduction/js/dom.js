@@ -180,6 +180,9 @@ $(document).ready(function () {
     $("#multiple2").val(["Multiple2","Multiple3"]);
     $("#valId3 input").val(["check1","check2","radio1"]);
 
+    // CSS 属性
+
+
 });
 
 function displayVals(){
