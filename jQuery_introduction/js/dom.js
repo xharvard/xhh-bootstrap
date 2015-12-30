@@ -79,6 +79,49 @@ $(document).ready(function () {
     });
 
     // 插入现有元素外
+    // .after()
+    $("#afterId p").after(document.createTextNode("hello"));
 
+    // .insertAfter()
+    $("#insertAfterId p").insertAfter("#foo3");
+
+    // .before()
+    $("#beforeId p").before($("#beforeId b"));
+
+    // .insertBefore()
+    $("#insertBeforeId p").insertBefore("foo4");
+
+    // DOM 移除
+    // .detach()
+    var p;
+    $("#detachId button").on("click", function () {
+        if(p){
+            $("#detachId").append(p);
+            p = null;
+        }else{
+            p = $("#detachId p").detach();
+        }
+    });
+
+    // .empty()
+    $("#emptyId button").click(function () {
+        $("#emptyId p").empty();
+    });
+
+    // .remove()
+    $("#removeId button").click(function () {
+        $("#removeId p").remove();
+    });
+
+    // DOM 替换
+    // .replaceAll()
+    $("<b>Paragraph. </b>").replaceAll("#replaceAllId p");
+
+    // .replaceWith()
+    $("#replaceWithId button").click(function () {
+        $(this).replaceWith("<div>" + $(this).text() + "</div>");
+    });
+
+    //
 
 });
