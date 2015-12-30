@@ -452,7 +452,9 @@
         <div class="col-md-8">
             <div id="replaceAllId">
                 <p>Hello</p>
+
                 <p>cruel</p>
+
                 <p>World</p>
             </div>
         </div>
@@ -470,6 +472,171 @@
                 <button>First</button>
                 <button>Second</button>
                 <button>Third</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 通用属性操作</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.attr( attributeName )</h4>
+
+            <p>描述: 获取匹配的元素集合中的第一个元素的属性的值。</p>
+            <small>.attr()方法只获取第一个匹配元素的属性值。要获取每个单独的元素的属性值，
+                我们需要依靠jQuery的 .each()或者.map()方法循环。
+            </small>
+            <h4>.attr( attributeName, value )</h4>
+
+            <p>描述: 设置每一个匹配元素的一个或多个属性。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="attrId">
+                <p>
+                    Once there was a <em title="huge, gigantic">large</em> dinosaur...
+                </p>
+
+                The title of the emphasis is:
+                <div></div>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div id="attrId2">
+                <img/>
+                <img/>
+                <img/>
+
+                <div><B>Attribute of Ajax</B></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.prop( propertyName )</h4>
+
+            <p>描述: 获取匹配的元素集中第一个元素的属性（property）值</p>
+            <small>.prop()方法只获得第一个匹配元素的属性值 。如果元素上没有该属性，或者如果没有匹配的元素。那么该方法会返回undefined值。
+                若要取得每个匹配元素的属性值（property），请使用循环结构，如jQuery .each()或.map()方法。
+            </small>
+            <h4>.prop( propertyName, value )</h4>
+
+            <p>描述: 为匹配的元素设置一个或多个属性（properties）。 </p>
+        </div>
+        <div class="col-md-8">
+            <div id="propId">
+                <input id="check1" type="checkbox" checked="checked">
+                <label for="check1">Check me</label>
+
+                <p></p>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="propId2">
+                <input type="checkbox" checked="checked"/>
+                <input type="checkbox"/>
+                <input type="checkbox"/>
+                <input type="checkbox" checked="checked"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.removeAttr( attributeName )</h4>
+
+            <p>描述: 为匹配的元素集合中的每个元素中移除一个属性（attribute）。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="remobeAttrId">
+                <button>Enable</button>
+                <input type="text" title="hello there"/>
+
+                <div id="log"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.removeProp( propertyName )</h4>
+
+            <p>描述: 为集合中匹配的元素删除一个属性（property）。</p>
+            <small>不要使用此方法来删除原生的属性（ property ），比如checked, disabled, 或者 selected。这将完全移除该属性，
+                一旦移除，不能再次被添加到元素上。使用.prop()来设置这些属性设置为false代替。
+                一般来说,只需要移除自定义的 属性（ property ） ，而不是移除内建的（原生的）属性（ property ）。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="removePropId">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.val()</h4>
+
+            <p>描述: 获取匹配的元素集合中第一个元素的当前值。</p>
+            <small>.val()方法主要用于获取表单元素的值，比如 input, select 和 textarea。
+                对于 &lt;select multiple="multiple"&gt; 元素, .val()方法返回一个包含每个选择项的数组，如果没有选择性被选中，它返回null。
+            </small>
+            <br>
+            <h4>.val( value )</h4>
+
+            <p>描述: 设置匹配的元素集合中每个元素的值。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="valId">
+                <p></p>
+
+                <select id="single">
+                    <option>Single</option>
+                    <option>Single2</option>
+                </select>
+
+                <select id="multiple" multiple="multiple">
+                    <option selected="selected">Multiple</option>
+                    <option>Multiple2</option>
+                    <option selected="selected">Multiple3</option>
+                </select>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="valId2">
+                <p>Type something and then click or tab out of the input.</p>
+                <input type="text" value="type something"/>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="valId3">
+                <select id="single2">
+                    <option>Single</option>
+                    <option>Single2</option>
+                </select>
+
+                <select id="multiple2" multiple="multiple">
+                    <option selected="selected">Multiple</option>
+                    <option>Multiple2</option>
+                    <option selected="selected">Multiple3</option>
+                </select><br/>
+                <input type="checkbox" name="checkboxname" value="check1"/> check1
+                <input type="checkbox" name="checkboxname" value="check2"/> check2
+
+                <input type="radio" name="r" value="radio1"/> radio1
+                <input type="radio" name="r" value="radio2"/> radio2
             </div>
         </div>
     </div>
