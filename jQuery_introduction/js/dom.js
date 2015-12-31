@@ -239,9 +239,9 @@ $(document).ready(function () {
     // .innerHeight()  .outerHeight()
     var p = $("#innerHeightId p:first");
     $("#innerHeightId p:last").html("innerHeight: " + p.innerHeight() + "<br>"
-                                    +"height: " + p.height() + "<br>"
-                                     +"outerHeight(包含margin): " + p.outerHeight(true) + "<br>"
-                                    + "outerHeight: " + p.outerHeight());
+        + "height: " + p.height() + "<br>"
+        + "outerHeight(包含margin): " + p.outerHeight(true) + "<br>"
+        + "outerHeight: " + p.outerHeight());
 
     // .width()
     $("#getpw").click(function () {
@@ -256,17 +256,55 @@ $(document).ready(function () {
         showWidth("window", $(window).width());
     });
 
-    $("#widthId2 div").one("click" , function () {
+    $("#widthId2 div").one("click", function () {
         $(this).width(20).addClass("mod");
     });
 
     // .innerWidth()  .outerWidth()
     var p = $("#innerWidthId p:first");
     $("#innerWidthId p:last").html("innerWidth: " + p.innerWidth() + "<br>"
-        +"width: " + p.width() + "<br>"
-        +"outerWidth(包含margin): " + p.outerWidth(true) + "<br>"
+        + "width: " + p.width() + "<br>"
+        + "outerWidth(包含margin): " + p.outerWidth(true) + "<br>"
         + "outerWidth: " + p.outerWidth());
 
+    // .offset()
+    $("*", "#offsetId").click(function (e) {
+        var offset = $(this).offset();
+        e.stopPropagation();
+
+        $("#offsetResult").text(this.tagName + " coords ( " + offset.left + ", " +
+            offset.top + " )");
+    });
+
+    var p1 = $("#offsetId2 p:first").offset();
+    $("#offsetId2 p:nth-child(2)").text("left: " + p1.left + ", top: " + p1.top)
+
+    var p2 = $("#offsetId2 p:last");
+    p2.offset({top: p2.offset().top + 30, left: 1000});
+
+    // .position()
+    var pos = $("#positionId p:first").position();
+    $("#positionId p:last").text("left: " + pos.left + ", top: " + pos.top);
+
+    // .scrollLeft()
+    $("#scrollLeftId").scroll(function () {
+        $("#scrollLeftId").next("p").text("scrollLeft: " + $("#scrollLeftId").scrollLeft());
+    });
+
+    $("#scrollLeftId").parent().find("button").click(function () {
+        var input = $(this).next();
+        $("#scrollLeftId").scrollLeft(input.val());
+    });
+
+    // .scrollTop()
+    $("#scrollTopId").scroll(function () {
+        $("#scrollTopId").next("p").text("scrollTop: " + $("#scrollTopId").scrollTop());
+    });
+
+    $("#scrollTopId").parent().find("button").click(function () {
+        var input = $(this).next();
+        $("#scrollTopId").scrollTop(input.val());
+    });
 
 });
 
