@@ -645,7 +645,175 @@
         <h1>DOM之 CSS 属性</h1>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.css( propertyName )</h4>
 
+            <p>描述: 获取匹配元素集合中的第一个元素的样式属性的值</p>
+            <h4>.css( propertyName, value )</h4>
+
+            <p>描述: 设置每个匹配元素的一个或多个CSS属性。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="cssId">
+                <span id="result">&nbsp;</span>
+
+                <div style="background-color:blue;"></div>
+                <div style="background-color:rgb(15,99,30);"></div>
+
+                <div style="background-color:#123456;"></div>
+                <div style="background-color:#f11;"></div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div id="cssId2">
+                <p>&nbsp;</p>
+
+                <div id="box1">1</div>
+                <div id="box2">2</div>
+                <div id="box3">3</div>
+                <div id="box4">4</div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="box">Click me to grow</div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="biger">点我将变大</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.height()</h4>
+
+            <p>描述: 获取匹配元素集合中的第一个元素的当前计算高度值。</p>
+            <small>.css('height') 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），
+                前者是返回带有完整单位的字符串（例如，400px）。当一个元素的高度需要数学计算的时候推荐使用.height() 方法 。
+            </small>
+            <h4>.height( value )</h4>
+
+            <p>描述: 设置每一个匹配元素的高度值。</p>
+            <small>
+                当调用.height(value)方法的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="heightId">
+                <button id="getp">Get Paragraph Height</button>
+                <button id="getd">Get Document Height</button>
+                <button id="getw">Get Window Height</button>
+
+                <div>&nbsp;</div>
+                <p>
+                    Sample paragraph to test height
+                </p>
+            </div>
+
+            <div id="heightId2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.innerHeight()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border。</p>
+            <small>这个方法返回元素的高度，包括顶部和底部的padding，单位是像素。
+                这个方法不适用于window and document对象，可以使用.height()代替。
+            </small>
+            <h4>.outerHeight( [includeMargin ] )</h4>
+
+            <p>描述: 获取元素集合中第一个元素的当前计算高度值,包括padding，border和选择性的margin。
+                返回一个整数（不包含“px”）表示的值  ，或如果在一个空集合上调用该方法，则会返回 null。</p>
+            <small>在.outerHeight()计算中总是包含padding-top ,padding-bottom 和 border-top，border-bottom ；
+                如果includeMargin参数是true，那么margin (top 和 bottom)也会被包含。
+            </small>
+            <small>这个方法不适用于window 和 document对象，可以使用.height()代替。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="innerHeightId">
+                <p>Hello</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.width()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算宽度值。</p>
+            <small>.css(width) 和 .width()之间的区别是后者返回一个没有单位的数值（例如，400），
+                前者是返回带有完整单位的字符串（例如，400px）。当一个元素的宽度需要数学计算的时候推荐使用.width() 方法 。
+            </small>
+            <h4>.width( value )</h4>
+
+            <p>描述: 给每个匹配的元素设置CSS宽度。</p>
+            <small>
+                当调用.width(value)方法的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="widthId">
+                <button id="getpw">Get Paragraph Height</button>
+                <button id="getdw">Get Document Height</button>
+                <button id="getww">Get Window Height</button>
+
+                <div>&nbsp;</div>
+                <p>
+                    Sample paragraph to test height
+                </p>
+            </div>
+
+            <div id="widthId2">
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.innerWidth()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，但是不包括border。</p>
+            <small>这个方法返回元素的宽度，包括左边和右边的padding，单位是像素。
+                这个方法不适用于window and document对象，可以使用.width() 代替。
+            </small>
+            <h4>.outerWidth( [includeMargin ] )</h4>
+
+            <p>描述: 获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。
+                （注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）</p>
+            <small>如果 includeMargin省略或者false，padding 和 border会被包含在计算中；如果true，margin也会被包含在计算中 。
+            </small>
+            <small>这个方法不适用于window 和 document对象，可以使用.width()代替。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="innerWidthId">
+                <p>Hello</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>

@@ -73,7 +73,7 @@ $(document).ready(function () {
     });
 
     $("#textId2 p").text("<b>Some</b> new text.");
-    
+
     $("#textId2 ul li").text(function (index) {
         return "item number " + (index + 1);
     });
@@ -95,10 +95,10 @@ $(document).ready(function () {
     // .detach()
     var p;
     $("#detachId button").on("click", function () {
-        if(p){
+        if (p) {
             $("#detachId").append(p);
             p = null;
-        }else{
+        } else {
             p = $("#detachId p").detach();
         }
     });
@@ -128,9 +128,9 @@ $(document).ready(function () {
     $("#attrId div").text(title);
 
     $("#attrId2 img").attr({
-        src:"image/hat.gif",
-        title:"jquery",
-        alt:"jQuery logo"
+        src: "image/hat.gif",
+        title: "jquery",
+        alt: "jQuery logo"
     });
 
     $("#attrId2 div").text($("#attrId2 img").attr("alt"));
@@ -139,29 +139,29 @@ $(document).ready(function () {
     $("#propId input").change(function () {
         var input = $(this);
         $("#propId p").html(".attr('checked'): <b>" + input.attr("checked") + "</b><br>"
-                          +".prop('checked'): <b>" + input.prop("checked") + "</b><br>"
-                          +".is(':checked'): <b>" + input.is(":checked") + "</b><br>"
+            + ".prop('checked'): <b>" + input.prop("checked") + "</b><br>"
+            + ".is(':checked'): <b>" + input.is(":checked") + "</b><br>"
         );
     });
 
-    $("#propId2 input").prop("disabled",true);
+    $("#propId2 input").prop("disabled", true);
 
     // .removeAttr()
     var inputTitle = $("#remobeAttrId input").attr("title");
     $("#remobeAttrId button").click(function () {
         var input = $(this).next();
 
-        if(input.attr("title") == inputTitle){
+        if (input.attr("title") == inputTitle) {
             input.removeAttr("title");
-        }else{
-            input.attr("title",inputTitle);
+        } else {
+            input.attr("title", inputTitle);
         }
-        $("#log").html( "input title is now " + input.attr("title") );
+        $("#log").html("input title is now " + input.attr("title"));
     });
 
     // .removeProp()
     var para = $("#removePropId p");
-    para.prop("luggageCode",1234);
+    para.prop("luggageCode", 1234);
     para.append("The secret luggage code is: ", String(para.prop("luggageCode")), ".<br> ");
     para.removeProp("luggageCode");
     para.append("Now the secret luggage code is: ", String(para.prop("luggageCode")), ". ");
@@ -177,15 +177,101 @@ $(document).ready(function () {
     });
 
     $("#single2").val("Single2");
-    $("#multiple2").val(["Multiple2","Multiple3"]);
-    $("#valId3 input").val(["check1","check2","radio1"]);
+    $("#multiple2").val(["Multiple2", "Multiple3"]);
+    $("#valId3 input").val(["check1", "check2", "radio1"]);
 
     // CSS 属性
+    // .css()
+    $("#cssId div").click(function () {
+        var color = $(this).css("background-color");
+        $("#result").html("That div is <span style='color:" +
+            color + ";'>" + color + "</span>.");
+    });
+
+    $("#cssId2 div").click(function () {
+        var html = ["The clicked div has the following styles:"];
+
+        var styleProps = $(this).css(["width", "height", "color", "background-color"]);
+
+        $.each(styleProps, function (prop, value) {
+            html.push(prop + ":" + value);
+        });
+
+        $("#cssId2 p").html(html.join("<br>"));
+
+    });
+
+    $("#box").one("click", function () {
+        $(this).css("width", "+=200");
+    });
+
+    $("#biger").click(function () {
+        $(this).css({
+            width: function (index, value) {
+                return parseFloat(value) * 1.2;
+            },
+            height: function (index, value) {
+                return parseFloat(value) * 1.2;
+            }
+        });
+    });
+
+    // .height()
+    $("#getp").click(function () {
+        showHeight("paragraph", $("#heightId p").height());
+    });
+
+    $("#getd").click(function () {
+        showHeight("document", $(document).height());
+    });
+
+    $("#getw").click(function () {
+        showHeight("window", $(window).height());
+    });
+
+    $("#heightId2 div").click(function () {
+        $(this).height(30).css({
+            cursor: "auto",
+            backgroundColor: "green"
+        });
+    });
+
+    // .innerHeight()  .outerHeight()
+    var p = $("#innerHeightId p:first");
+    $("#innerHeightId p:last").html("innerHeight: " + p.innerHeight() + "<br>"
+                                    +"height: " + p.height() + "<br>"
+                                     +"outerHeight(包含margin): " + p.outerHeight(true) + "<br>"
+                                    + "outerHeight: " + p.outerHeight());
+
+    // .width()
+    $("#getpw").click(function () {
+        showWidth("paragraph", $("#widthId p").width());
+    });
+
+    $("#getdw").click(function () {
+        showWidth("document", $(document).width());
+    });
+
+    $("#getww").click(function () {
+        showWidth("window", $(window).width());
+    });
+
+    $("#widthId2 div").one("click" , function () {
+        $(this).width(20).addClass("mod");
+    });
+
+    // .innerWidth()  .outerWidth()
+    var p = $("#innerWidthId p:first");
+    $("#innerWidthId p:last").html("innerWidth: " + p.innerWidth() + "<br>"
+        +"width: " + p.width() + "<br>"
+        +"outerWidth(包含margin): " + p.outerWidth(true) + "<br>"
+        + "outerWidth: " + p.outerWidth());
 
 
 });
 
-function displayVals(){
+
+function displayVals() {
     var singleVals = $("#single").val();
     var multipleVals = $("#multiple").val() || [];
 
@@ -193,4 +279,14 @@ function displayVals(){
         singleVals +
         " <b>Multiple:</b> " +
         multipleVals.join(", "));
+}
+
+function showHeight(ele, h) {
+    $("#heightId div").text("The height for the " + ele +
+        " is " + h + "px.");
+}
+
+function showWidth(ele, w) {
+    $("#widthId div").text("The width for the " + ele +
+        " is " + w + "px.");
 }

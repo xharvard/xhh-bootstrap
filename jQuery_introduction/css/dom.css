@@ -35,3 +35,88 @@
 #foo {
     background: yellow;
 }
+
+#cssId div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+}
+
+#cssId2 div {
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    float: left;
+}
+
+#box1 {
+    width: 50px;
+    color: yellow;
+    background-color: blue;
+}
+
+#box2 {
+    width: 80px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 99, 30);
+}
+
+#box3 {
+    width: 40px;
+    color: #fcc;
+    background-color: #123456;
+}
+
+#box4 {
+    width: 70px;
+    background-color: #f11;
+}
+
+#box {
+    background: black;
+    color: snow;
+    width: 100px;
+    padding: 10px;
+}
+
+#biger {
+    width: 50px;
+    height: 50px;
+    background-color: #f33;
+}
+
+#heightId2 div {
+    width: 50px;
+    height: 70px;
+    float: left;
+    margin: 5px;
+    background: rgb(255, 140, 0);
+    cursor: pointer;
+}
+
+#innerHeightId p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+}
+
+#widthId2 div {
+    width: 70px;
+    height: 50px;
+    float: left;
+    margin: 5px;
+    background: red;
+    cursor: pointer;
+}
+
+.mod {
+    background: blue;
+    cursor: default;
+}
+
+#innerWidthId p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+}
