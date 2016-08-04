@@ -1,0 +1,144 @@
+<!DOCTYPE html>   <!-- 定义DOCTYPE -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  <!-- 字符编码 -->
+    <title>HTML5 教程</title>
+
+    <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">  <!-- css, 无需type属性 -->
+
+    <script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>  <!-- javascript， 无需type属性 -->
+    <script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<p>HTML5引入了许多新元素和属性</p>
+<ul>
+    <li>新的语义化元素： &lt;header&gt; , &lt;footer&gt; , &lt;section&gt;</li>
+    <li>表单2.0： 改进了Web表单， 为 &lt;input&gt; 标签引入了新的属性</li>
+    <li>持久的本地存储： 不用再通过第三方实现了</li>
+    <li>WebSocket: 用于Web应用程序的下一代双向通信技术</li>
+    <li>服务器推送事件：HTML5 引入了从 Web 服务器到 Web 浏览器的事件，也称为服务器推送事件（SSE）</li>
+    <li>Canvas: 支持用 Javascript 以编程的方式进行二维绘画</li>
+    <li>音频和视频: 在网页中嵌入音频或视频无需借助第三方插件</li>
+    <li>地理定位: 用户可以选择与我们的网页共享他们的地理位置</li>
+    <li>微数据: 允许创建 HTML5 之外的自定义词汇表，以及使用自定义语义扩展网页</li>
+    <li>拖放: 把同一网页上的条目从一个位置拖放到另一个位置</li>
+</ul>
+
+<!--
+    HTML5文档：
+    1, section: 表示一个通用的文档或者应用程序节，可以和 h1-h6 一起使用来表示文档结构
+    2, article: 表示文档内容的一个独立块，比如博客条目或者报纸上的文章
+    3, aside: 表示与页面其他部分略微相关的内容块
+    4, header: 表示一个节的头部
+    5, footer： 表示一个节的脚注，可以包含作者，版权等信息
+    6, nav: 用于导航文档的节
+    7, dialog: 可以用于标记会话
+    8, figure: 可以用于关联标题和某些嵌入内容，比如图表和视频
+-->
+
+<!-- 自定义属性: 以 data- 开头 可以通过javascript或则css获取属性值 -->
+<div class="example" data-subject="physics" data-level="complex"></div>
+
+<!--
+    表单
+    html4中的 <input> 元素
+    text
+    password
+    checkbox
+    radio
+    submit
+    file
+    image
+    hidden
+    select
+    textarea
+    button
+-->
+
+<h3>html4 表单</h3>
+<form action="index.html" method="post">
+    <p>
+        <label for="firstname">first name: </label>
+        <input type="text" id="firstname"><br>
+        <label for="lastname">last name: </label>
+        <input type="text" id="lastname"><br>
+        <label for="email">email: </label>
+        <input type="text" id="email"><br>
+        <input type="radio" name="sex" value="male"> Male <br>
+        <input type="radio" name="sex" value="female"> Female <br>
+        <input type="submit" value="send">
+        <input type="reset">
+    </p>
+</form>
+<br>
+<h3>html5 表单</h3>
+<!--
+    html5中的 <input> 元素
+    datatime
+    dataime-local
+    data
+    month
+    week
+    time
+    number
+    range
+    email
+    url
+
+    <output> 元素: 表示不同类型的输出结果
+-->
+
+<form action="index.html" method="post">
+<!-- placeholder 属性, 支持 input 和 textarea, 提供输入提示 -->
+    <label>placeholder: </label>
+<input type="text" name="search" placeholder="输入提示" /> <br>
+
+<!-- required 属性, 输入框必须输入 -->
+    <label>required: </label>
+<input text="text" name="find" required /> <br>
+
+
+    <input type="submit" value="提交">
+</form>
+<br>
+
+<!--
+    SVG: 可伸缩矢量图形， 用于描述 2D 图形语言， 图形应用使用 XML 编写，然后由 SVG 阅读器程序呈现
+-->
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <circle id="redcircle" cx="50" cy="50" r="50" fill="red"></circle>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <rect id="greenrect" width="200" height="100" fill="green"></rect>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="200" y2="100" style="stroke: red;stroke-width: 2"></line>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="50" rx="100" ry="50" fill="green"></ellipse>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="20,10,300,20,170,50" fill="red"></polygon>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,0,0,20,20,20,20,40,40,40,40,60" fill="green"></polyline>
+</svg>
+
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: rgb(200,200,200); stop-opacity: 0"></stop>
+            <stop offset="100%" style="stop-color: rgb(0,0,255); stop-opacity: 1"></stop>
+        </radialGradient>
+    </defs>
+
+    <ellipse cx="100" cy="50" rx="100" ry="50" style="fill:url(#gradient)"></ellipse>
+</svg>
+
+</body>
+</html>
