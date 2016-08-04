@@ -330,6 +330,594 @@
         <h1>DOM之 插入现有元素外</h1>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.after( content [, content ] )</h4>
+
+            <p>描述: 在匹配元素集合中的每个元素后面插入参数所指定的内容，作为其兄弟节点。</p>
+            <small>.after()和.insertAfter()实现同样的功能。主要的不同是语法——特别是内容和目标的位置。
+                对于 .after(), 选择表达式在函数的前面，参数是将要插入的内容。
+                对于.insertAfter(), 刚好相反，内容在方法前面，它将被放在参数里元素的后面。
+            </small>
+            <h4>.insertAfter( target )</h4>
+
+            <P>描述: 在目标元素后面插入集合中每个匹配的元素(注：插入的元素作为目标元素的兄弟元素)。</P>
+        </div>
+        <div class="col-md-8">
+            <div id="afterId">
+                <p>I would like to say: </p>
+            </div>
+
+            <div id="insertAfterId">
+                <p> is what I said... </p>
+
+                <div id="foo3">FOO!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.before( content [, content ] )</h4>
+
+            <p>描述: 根据参数设定，在匹配元素的前面插入内容（译者注：外部插入）</p>
+            <small>.before() 和.insertBefore()实现同样的功能。主要的不同是语法——内容和目标的位置不同。对于.before(),
+                选择器表达式在方法的前面，参数是将要插入的内容。对于.insertBefore()刚好相反，内容在方法前面，
+                无论是作为一个选择表达式或作为标记上创建动态，它将被放在目标容器的前面。
+            </small>
+            <h4>.insertBefore( target )</h4>
+
+            <P>描述: 在目标元素前面插入集合中每个匹配的元素(注：插入的元素作为目标元素的兄弟元素)。</P>
+        </div>
+        <div class="col-md-8">
+            <div id="beforeId">
+                <p> is what I said...</p><b>Hello</b>
+            </div>
+
+            <div id="insertBeforeId">
+                <div id="foo4">FOO!</div>
+                <p>I would like to say: </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 DOM移除</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.detach( [selector ] )</h4>
+
+            <p>描述: 从DOM中去掉所有匹配的元素。</p>
+            <small>.detach() 方法和.remove()一样, 除了 .detach()保存所有jQuery数据和被移走的元素相关联。
+                当需要移走一个元素，不久又将该元素插入DOM时，这种方法很有用。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="detachId">
+                <p>Hello</p>
+                how are
+                <p>you?</p>
+                <button>Attach/detach paragraphs</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.empty()</h4>
+
+            <p>描述: 从DOM中移除集合中匹配元素的所有子节点。</p>
+            <small>这个方法不仅移除子元素（和其他后代元素），同样移除元素里的文本。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="emptyId">
+                <p>
+                    Hello, <span>Person</span> <a href="javascript:;">and person</a>
+                </p>
+
+                <button>empty</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.remove( [selector ] )</h4>
+
+            <p>描述: 将匹配元素集合从DOM中删除。（注：同时移除元素上的事件及 jQuery 数据。）</p>
+        </div>
+        <div class="col-md-8">
+            <div id="removeId">
+                <p>Hello</p>
+                how are
+                <p>you?</p>
+                <button>remove</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 DOM替换</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.replaceAll( target )</h4>
+
+            <p>描述: 用集合的匹配元素替换每个目标元素。</p>
+            <small>.replaceAll()和.replaceWith()功能一样，但是目标和源相反。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="replaceAllId">
+                <p>Hello</p>
+
+                <p>cruel</p>
+
+                <p>World</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.replaceWith( newContent )</h4>
+
+            <p>描述: 用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合。</p>
+            <small>.replaceAll()和.replaceWith()功能一样，但是目标和源相反。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="replaceWithId">
+                <button>First</button>
+                <button>Second</button>
+                <button>Third</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 通用属性操作</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.attr( attributeName )</h4>
+
+            <p>描述: 获取匹配的元素集合中的第一个元素的属性的值。</p>
+            <small>.attr()方法只获取第一个匹配元素的属性值。要获取每个单独的元素的属性值，
+                我们需要依靠jQuery的 .each()或者.map()方法循环。
+            </small>
+            <h4>.attr( attributeName, value )</h4>
+
+            <p>描述: 设置每一个匹配元素的一个或多个属性。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="attrId">
+                <p>
+                    Once there was a <em title="huge, gigantic">large</em> dinosaur...
+                </p>
+
+                The title of the emphasis is:
+                <div></div>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div id="attrId2">
+                <img/>
+                <img/>
+                <img/>
+
+                <div><B>Attribute of Ajax</B></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.prop( propertyName )</h4>
+
+            <p>描述: 获取匹配的元素集中第一个元素的属性（property）值</p>
+            <small>.prop()方法只获得第一个匹配元素的属性值 。如果元素上没有该属性，或者如果没有匹配的元素。那么该方法会返回undefined值。
+                若要取得每个匹配元素的属性值（property），请使用循环结构，如jQuery .each()或.map()方法。
+            </small>
+            <h4>.prop( propertyName, value )</h4>
+
+            <p>描述: 为匹配的元素设置一个或多个属性（properties）。 </p>
+        </div>
+        <div class="col-md-8">
+            <div id="propId">
+                <input id="check1" type="checkbox" checked="checked">
+                <label for="check1">Check me</label>
+
+                <p></p>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="propId2">
+                <input type="checkbox" checked="checked"/>
+                <input type="checkbox"/>
+                <input type="checkbox"/>
+                <input type="checkbox" checked="checked"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.removeAttr( attributeName )</h4>
+
+            <p>描述: 为匹配的元素集合中的每个元素中移除一个属性（attribute）。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="remobeAttrId">
+                <button>Enable</button>
+                <input type="text" title="hello there"/>
+
+                <div id="log"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.removeProp( propertyName )</h4>
+
+            <p>描述: 为集合中匹配的元素删除一个属性（property）。</p>
+            <small>不要使用此方法来删除原生的属性（ property ），比如checked, disabled, 或者 selected。这将完全移除该属性，
+                一旦移除，不能再次被添加到元素上。使用.prop()来设置这些属性设置为false代替。
+                一般来说,只需要移除自定义的 属性（ property ） ，而不是移除内建的（原生的）属性（ property ）。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="removePropId">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.val()</h4>
+
+            <p>描述: 获取匹配的元素集合中第一个元素的当前值。</p>
+            <small>.val()方法主要用于获取表单元素的值，比如 input, select 和 textarea。
+                对于 &lt;select multiple="multiple"&gt; 元素, .val()方法返回一个包含每个选择项的数组，如果没有选择性被选中，它返回null。
+            </small>
+            <br>
+            <h4>.val( value )</h4>
+
+            <p>描述: 设置匹配的元素集合中每个元素的值。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="valId">
+                <p></p>
+
+                <select id="single">
+                    <option>Single</option>
+                    <option>Single2</option>
+                </select>
+
+                <select id="multiple" multiple="multiple">
+                    <option selected="selected">Multiple</option>
+                    <option>Multiple2</option>
+                    <option selected="selected">Multiple3</option>
+                </select>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="valId2">
+                <p>Type something and then click or tab out of the input.</p>
+                <input type="text" value="type something"/>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="valId3">
+                <select id="single2">
+                    <option>Single</option>
+                    <option>Single2</option>
+                </select>
+
+                <select id="multiple2" multiple="multiple">
+                    <option selected="selected">Multiple</option>
+                    <option>Multiple2</option>
+                    <option selected="selected">Multiple3</option>
+                </select><br/>
+                <input type="checkbox" name="checkboxname" value="check1"/> check1
+                <input type="checkbox" name="checkboxname" value="check2"/> check2
+
+                <input type="radio" name="r" value="radio1"/> radio1
+                <input type="radio" name="r" value="radio2"/> radio2
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>DOM之 CSS 属性</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.css( propertyName )</h4>
+
+            <p>描述: 获取匹配元素集合中的第一个元素的样式属性的值</p>
+            <h4>.css( propertyName, value )</h4>
+
+            <p>描述: 设置每个匹配元素的一个或多个CSS属性。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="cssId">
+                <span id="result">&nbsp;</span>
+
+                <div style="background-color:blue;"></div>
+                <div style="background-color:rgb(15,99,30);"></div>
+
+                <div style="background-color:#123456;"></div>
+                <div style="background-color:#f11;"></div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div id="cssId2">
+                <p>&nbsp;</p>
+
+                <div id="box1">1</div>
+                <div id="box2">2</div>
+                <div id="box3">3</div>
+                <div id="box4">4</div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="box">Click me to grow</div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="biger">点我将变大</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.height()</h4>
+
+            <p>描述: 获取匹配元素集合中的第一个元素的当前计算高度值。</p>
+            <small>.css('height') 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），
+                前者是返回带有完整单位的字符串（例如，400px）。当一个元素的高度需要数学计算的时候推荐使用.height() 方法 。
+            </small>
+            <h4>.height( value )</h4>
+
+            <p>描述: 设置每一个匹配元素的高度值。</p>
+            <small>
+                当调用.height(value)方法的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="heightId">
+                <button id="getp">Get Paragraph Height</button>
+                <button id="getd">Get Document Height</button>
+                <button id="getw">Get Window Height</button>
+
+                <div>&nbsp;</div>
+                <p>
+                    Sample paragraph to test height
+                </p>
+            </div>
+
+            <div id="heightId2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.innerHeight()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border。</p>
+            <small>这个方法返回元素的高度，包括顶部和底部的padding，单位是像素。
+                这个方法不适用于window and document对象，可以使用.height()代替。
+            </small>
+            <h4>.outerHeight( [includeMargin ] )</h4>
+
+            <p>描述: 获取元素集合中第一个元素的当前计算高度值,包括padding，border和选择性的margin。
+                返回一个整数（不包含“px”）表示的值  ，或如果在一个空集合上调用该方法，则会返回 null。</p>
+            <small>在.outerHeight()计算中总是包含padding-top ,padding-bottom 和 border-top，border-bottom ；
+                如果includeMargin参数是true，那么margin (top 和 bottom)也会被包含。
+            </small>
+            <small>这个方法不适用于window 和 document对象，可以使用.height()代替。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="innerHeightId">
+                <p>Hello</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.width()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算宽度值。</p>
+            <small>.css(width) 和 .width()之间的区别是后者返回一个没有单位的数值（例如，400），
+                前者是返回带有完整单位的字符串（例如，400px）。当一个元素的宽度需要数学计算的时候推荐使用.width() 方法 。
+            </small>
+            <h4>.width( value )</h4>
+
+            <p>描述: 给每个匹配的元素设置CSS宽度。</p>
+            <small>
+                当调用.width(value)方法的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="widthId">
+                <button id="getpw">Get Paragraph Height</button>
+                <button id="getdw">Get Document Height</button>
+                <button id="getww">Get Window Height</button>
+
+                <div>&nbsp;</div>
+                <p>
+                    Sample paragraph to test height
+                </p>
+            </div>
+
+            <div id="widthId2">
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+                <div>dd</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.innerWidth()</h4>
+
+            <p>描述: 为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，但是不包括border。</p>
+            <small>这个方法返回元素的宽度，包括左边和右边的padding，单位是像素。
+                这个方法不适用于window and document对象，可以使用.width() 代替。
+            </small>
+            <h4>.outerWidth( [includeMargin ] )</h4>
+
+            <p>描述: 获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。
+                （注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）</p>
+            <small>如果 includeMargin省略或者false，padding 和 border会被包含在计算中；如果true，margin也会被包含在计算中 。
+            </small>
+            <small>这个方法不适用于window 和 document对象，可以使用.width()代替。</small>
+        </div>
+        <div class="col-md-8">
+            <div id="innerWidthId">
+                <p>Hello</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.offset()</h4>
+
+            <p>描述: 在匹配的元素集合中，获取的第一个元素的当前坐标，坐标相对于文档。 </p>
+            <small>.offset()方法允许我们检索一个元素相对于文档（document）的当前位置。
+                和.position()的差别在于：.position()是相对于相对于父级元素的位移。
+            </small>
+            <br><small>.offset()返回一个包含top 和 left属性的对象 。</small>
+            <h4>.offset( coordinates )</h4>
+
+            <p>描述: 设置匹配的元素集合中每一个元素的坐标， 坐标相对于文档。</p>
+            <small>.offset()方法允许我们重新设置元素的位置，这个元素的位置是相对于document对象的。
+                如果对象原先的position样式属性是static的话，会被改成relative来实现重定位。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="offsetId">
+                <div id="offsetResult">Click an element.</div>
+                <p>
+                    This is the best way to <span>find</span> an offset.
+                </p>
+
+                <div class="abs">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <div id="offsetId2">
+                <p>Hello</p>
+                <p></p>
+                <p>我被重新定位了</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.position()</h4>
+
+            <p>描述: 获取匹配元素中第一个元素的当前坐标，相对于offset parent的坐标。
+                ( 译者注：offset parent指离该元素最近的而且被定位过的祖先元素 )</p>
+            <small>.position()方法可以取得元素相对于父元素的偏移位置。与.offset()不同,
+                .offset()是获得该元素相对于documet的当前坐标 当把一个新元素放在同一个容器里面另一个元素附近时，用.position()更好用。
+            </small>
+        </div>
+        <div class="col-md-8">
+            <div id="positionId">
+                <p>Hello</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.scrollLeft()</h4>
+
+            <p>描述: 获取匹配的元素集合中第一个元素的当前水平滚动条的位置。</p>
+            <small>滚动条水平滚动位置是和滚动区隐藏区域的左侧宽度像素值是相同的。
+                如果滚动条是在最左边，或者这个元素没有可滚动的，那么这个数字是0。
+            </small>
+            <h4>.scrollLeft( value )</h4>
+
+            <p>描述: 设置每个匹配元素的水平滚动条位置。</p>
+        </div>
+        <div class="col-md-8">
+            <div id="scrollLeftId" style="width:200px; height: 100px; overflow: scroll">
+                <P class="text-nowrap">获取匹配的元素集合中第一个元素的当前水平滚动条的位置获取匹配的元素集合
+                </P>
+            </div>
+            <p></p>
+            <button>设置滚动位置为：</button>
+            <input type="text" value="0">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>.scrollTop()</h4>
+
+            <p>描述: 获取匹配的元素集合中第一个元素的当前垂直滚动条的位置或设置每个匹配元素的垂直滚动条位置。</p>
+            <small>滚动条垂直位置和滚动区隐藏区域的顶部高度像素值是相同的。
+                如果滚动条是在最顶部，或者这个元素没有可滚动的，那么这个数字是0。
+            </small>
+            <h4>.scrollTop( value )</h4>
+
+            <p>描述: 设置每个匹配元素的垂直滚动条位置</p>
+        </div>
+        <div class="col-md-8">
+            <div id="scrollTopId" style="width:200px; height: 100px; overflow: scroll">
+                <P>获取匹配的元素集合中第一个元素的当前水平滚动条的位置获取匹配的元素集合
+                   获取匹配的元素集合中第一个元素的当前水平滚动条的位置获取匹配的元素集合
+                   获取匹配的元素集合中第一个元素的当前水平滚动条的位置获取匹配的元素集合
+                </P>
+            </div>
+            <p></p>
+            <button>设置滚动位置为：</button>
+            <input type="text" value="0">
+        </div>
+    </div>
 
 </div>
 </body>
