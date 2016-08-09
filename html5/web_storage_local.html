@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web 存储- 会话存储</title>
+</head>
+<body>
+
+<script>
+    // 删除所有本地存储
+    //localStorage.clear();
+
+    // 3种存储方法：存到localStorage里的值都会自动转换成字符串，比较推荐使用第三种方法
+    //localStorage.hits=1
+    //localStorage["hits"]=1;
+    //localStorage.setItem("hits",1);
+
+
+    if(localStorage.hits){
+        localStorage.hits = Number(localStorage.hits) + 1;
+    }else{
+        localStorage.hits = 1;
+    }
+
+    document.write("Total Hits: " + localStorage.hits);
+
+
+
+</script>
+
+<p>刷新画面来增加hits数量</p>
+<p>关闭画面再打开来检查结果</p>
+
+</body>
+</html>

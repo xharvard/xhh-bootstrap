@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web 存储- 会话存储</title>
+</head>
+<body>
+
+<script>
+    if(sessionStorage.hits){
+        sessionStorage.hits = Number(sessionStorage.hits) + 1;
+    }else{
+        sessionStorage.hits = 1;
+    }
+
+    document.write("Total Hits: " + sessionStorage.hits);
+</script>
+
+<p>刷新画面来增加hits数量</p>
+<p>关闭画面再打开来检查结果</p>
+
+</body>
+</html>

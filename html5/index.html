@@ -10,7 +10,8 @@
     <script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<p>HTML5引入了许多新元素和属性</p>
+<h2>HTML5引入了许多新元素和属性</h2>
+<hr>
 <ul>
     <li>新的语义化元素： &lt;header&gt; , &lt;footer&gt; , &lt;section&gt;</li>
     <li>表单2.0： 改进了Web表单， 为 &lt;input&gt; 标签引入了新的属性</li>
@@ -55,7 +56,8 @@
     button
 -->
 
-<h3>html4 表单</h3>
+<h2>html4 表单</h2>
+<hr>
 <form action="index.html" method="post">
     <p>
         <label for="firstname">first name: </label>
@@ -71,11 +73,12 @@
     </p>
 </form>
 <br>
-<h3>html5 表单</h3>
+<h2>html5 表单</h2>
+<hr>
 <!--
     html5中的 <input> 元素
-    datatime
-    dataime-local
+    datetime
+    dateime-local
     data
     month
     week
@@ -89,6 +92,15 @@
 -->
 
 <form action="index.html" method="post">
+    <label>datatime: </label>
+    <input type="datetime" name="datetimeDemo" /> <br>
+    <label>number: </label>
+    <input type="number" name="numberDemo" step="2" value="1" min="1" max="5"><br>
+    <label>range: </label>
+    <input type="range" name="rangeDemo" min="1" max="10"><br>
+    <label>email: </label>
+    <input type="email" name="emailDemo"><br>
+
 <!-- placeholder 属性, 支持 input 和 textarea, 提供输入提示 -->
     <label>placeholder: </label>
 <input type="text" name="search" placeholder="输入提示" /> <br>
@@ -97,38 +109,39 @@
     <label>required: </label>
 <input text="text" name="find" required /> <br>
 
-
     <input type="submit" value="提交">
 </form>
-<br>
 
+<br>
+<h2>SVG</h2>
+<hr>
 <!--
     SVG: 可伸缩矢量图形， 用于描述 2D 图形语言， 图形应用使用 XML 编写，然后由 SVG 阅读器程序呈现
 -->
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <circle id="redcircle" cx="50" cy="50" r="50" fill="red"></circle>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <rect id="greenrect" width="200" height="100" fill="green"></rect>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <line x1="0" y1="0" x2="200" y2="100" style="stroke: red;stroke-width: 2"></line>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <ellipse cx="100" cy="50" rx="100" ry="50" fill="green"></ellipse>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <polygon points="20,10,300,20,170,50" fill="red"></polygon>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <polyline points="0,0,0,20,20,20,20,40,40,40,40,60" fill="green"></polyline>
 </svg>
-
+<br>
 <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -139,6 +152,104 @@
 
     <ellipse cx="100" cy="50" rx="100" ry="50" style="fill:url(#gradient)"></ellipse>
 </svg>
+<br>
+<a href="SVG教程.html">更多 SVG 教程</a>
+<br>
+<h2>MathML</h2>
+<hr>
+<!--
+    MathML 元素: <math>标签
+    火狐浏览器支持比较好
+    参考： http://www.ibm.com/developerworks/cn/xml/x-mathml3/
+          http://www.ibm.com/developerworks/cn/xml/x-mathml/
+          http://tool.oschina.net/mathml
+-->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <msup>
+            <mi>a</mi>
+            <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+        </msup>
+        <mo>=</mo>
+        <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+        </msup>
+    </mrow>
+</math>
+<br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+       <mrow>
+           <msup>
+               <mi>x</mi>
+               <mn>2</mn>
+           </msup>
+           <mo>+</mo>
+           <mrow>
+               <mn>4</mn>
+               <mo></mo>
+               <mi>x</mi>
+           </mrow>
+           <mo>+</mo>
+           <mn>4</mn>
+       </mrow>
+        <mo>=</mo>
+        <mn>0</mn>
+    </mrow>
+</math>
+<br>
+<!-- 矩阵 -->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <mi>A</mi>
+        <mo>=</mo>
+        <mfenced open="[" close="]">
+            <mtable>
+                <mtr>
+                    <mtd>
+                        <mi>x</mi>
+                    </mtd>
+                    <mtd>
+                        <mi>y</mi>
+                    </mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
+                        <mi>a</mi>
+                    </mtd>
+                    <mtd>
+                        <mi>b</mi>
+                    </mtd>
+                </mtr>
+            </mtable>
+        </mfenced>
+    </mrow>
+</math>
+<br>
+<h2>Web存储</h2>
+<hr>
+
+<!--
+    Web存储： Cookies只能存储有限的 4KB 数据。
+    2种存储方式： session storage 和 local storage 可以存储 5M 的数据
+    session storage （sessionStorage）: 关闭窗口，会话丢失
+    local storage （localStorage）: 多窗口存储，不会丢失。
+        删除本地存储： localStorage。remove('key') 或者 localStorage.clear() 删除所有
+-->
+<a href="web_storage_session.html">会话存储</a>
+<br>
+<a href="web_storage_local.html">本地存储</a>
+<br>
+
+<h2>Web SQL 数据库</h2>
+<hr>
+
 
 </body>
 </html>
