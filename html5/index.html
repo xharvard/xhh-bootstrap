@@ -273,16 +273,26 @@
     });
 
     // 读取操作
-        tx.executeSql('SELECT * FROM LOGS', [], function(tx, results){
-            var len = results.rows.length;
+    tx.executeSql('SELECT * FROM LOGS', [], function(tx, results){
+        var len = results.rows.length;
 
-        });
+    });
 
     // 参考：
     http://www.ibm.com/developerworks/cn/web/1108_zhaifeng_websqldb/
 
 -->
 <a href="web_sql.html">Web Sql 数据库</a>
+<br>
+
+<h2>服务器推送事件(SSE)</h2>
+<hr>
+<!--
+    随着 HTML5 的出现，WHATWG Web Applications 1.0 引入了一个从 Web 服务器到 Web 浏览器的事件流，被称作
+    服务器推送事件（SSE）。使用 SSE 可以不停的将 DOM 事件推送到用户的浏览器中。
+
+    SSE: Server-Sent Events
+-->
 
 
 </body>
