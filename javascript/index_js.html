@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+</head>
+
+<script>
+
+    function onload(){
+        // HTML5中类jQuery选择器querySelector的使用
+        var msg = '<p>Log message created and row inserted.</p>';
+        document.querySelector("#status").innerHTML = msg;
+    }
+
+
+</script>
+
+<body onload="onload()">
+<div id="status" name="status">Status Message</div>
+</body>
+</html>

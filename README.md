@@ -33,3 +33,4 @@ Node.js中文网:http://nodejs.cn/<br>
 2015/12/24  加入jQuery之事件。<br>
 2015/12/25  加入jQuery之特效。<br>
 2015/12/28  加入jQuery之DOM操作。<br>
+2016/8/10   加入html5相应知识。<br>

@@ -240,7 +240,7 @@
     2种存储方式： session storage 和 local storage 可以存储 5M 的数据
     session storage （sessionStorage）: 关闭窗口，会话丢失
     local storage （localStorage）: 多窗口存储，不会丢失。
-        删除本地存储： localStorage。remove('key') 或者 localStorage.clear() 删除所有
+        删除本地存储： localStorage.remove('key') 或者 localStorage.clear() 删除所有
 -->
 <a href="web_storage_session.html">会话存储</a>
 <br>
@@ -249,6 +249,40 @@
 
 <h2>Web SQL 数据库</h2>
 <hr>
+<!--
+    3个核心方法：
+    1, openDatabase: 使用现有或新建的数据库创建数据库对象
+    2, transaction: 控制事务， 执行提交或回滚
+    3, executeSql: 执行sql查询
+
+    // 开启数据库，如果不存在，则创建
+    // 支持5个参数： 数据库名称，版本号，描述，数据库大小，回调函数
+    var db = openDatabase('mydb', '1.0', 'Test DB', 2*1024*1024);
+
+    // 执行查询
+    db.transaction(function(tx){
+        tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS(id unique, log)');
+    });
+
+    // 插入操作
+    db.transaction(function(tx){
+        tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS(id unique, log)');
+        tx.executeSql('INSERT INTO LOGS(id,log) VALUES(1, "foobar")');
+        // 创建条目是可以传入动态值([] 数组映射)
+        tx.executeSql('INSERT INTO LOGS(id,log) VALUES(？, ？)', [e_id, e_log]);
+    });
+
+    // 读取操作
+        tx.executeSql('SELECT * FROM LOGS', [], function(tx, results){
+            var len = results.rows.length;
+
+        });
+
+    // 参考：
+    http://www.ibm.com/developerworks/cn/web/1108_zhaifeng_websqldb/
+
+-->
+<a href="web_sql.html">Web Sql 数据库</a>
 
 
 </body>
